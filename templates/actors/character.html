@@ -1,0 +1,158 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <div class="charsheet">
+    <section class="left-section">
+      <div class="char-name"><h2><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></h2></div>
+      <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
+      <h2><label>{{localize "ATD6.resources.resolve"}}</label></h2>
+      <ul class="resources">
+        {{#if (gt actor.system.resources.resolve.max 0)}}
+          {{#if (gt actor.system.resources.resolve.value 0)}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.resolve.max 1)}}
+          {{#if (gt actor.system.resources.resolve.value 1)}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.resolve.max 2)}}
+          {{#if (gt actor.system.resources.resolve.value 2)}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.resolve.max 3)}}
+          {{#if (gt actor.system.resources.resolve.value 3)}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.resolve.max 4)}}
+          {{#if (gt actor.system.resources.resolve.value 4)}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.resolve.max 5)}}
+          {{#if (gt actor.system.resources.resolve.value 5)}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="resolve-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+      </ul>
+      <h2><label>{{localize "ATD6.resources.karma"}}</label></h2>
+      <ul class="resources">
+        {{#if (gt actor.system.resources.karma.max 0)}}
+          {{#if (gt actor.system.resources.karma.value 0)}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover_grey.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.karma.max 1)}}
+          {{#if (gt actor.system.resources.karma.value 1)}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover_grey.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.karma.max 2)}}
+          {{#if (gt actor.system.resources.karma.value 2)}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover_grey.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.karma.max 3)}}
+          {{#if (gt actor.system.resources.karma.value 3)}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover_grey.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.karma.max 4)}}
+          {{#if (gt actor.system.resources.karma.value 4)}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="karma-change"><img src="systems/atd6/style/icons/clover_grey.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.karma.max 5)}}
+        {{/if}}
+      </ul>
+      {{#if (gt actor.system.resources.afflictions.value 0)}}
+        <h2><label>{{localize "ATD6.resources.afflictions"}}</label></h2>
+      {{else}}
+        {{#if isGM}}<h2><label>{{localize "ATD6.resources.afflictions"}}</label></h2>{{/if}}
+      {{/if}}
+      <ul class="resources">
+        {{#if (gt actor.system.resources.afflictions.max 0)}}
+          {{#if (gt actor.system.resources.afflictions.value 0)}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull_grey.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.afflictions.max 1)}}
+          {{#if (gt actor.system.resources.afflictions.value 1)}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull_grey.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.afflictions.max 2)}}
+          {{#if (gt actor.system.resources.afflictions.value 2)}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull_grey.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.afflictions.max 3)}}
+          {{#if (gt actor.system.resources.afflictions.value 3)}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull_grey.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.afflictions.max 4)}}
+          {{#if (gt actor.system.resources.afflictions.value 4)}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull_grey.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}{{/if}}
+        {{/if}}
+        {{#if (gt actor.system.resources.afflictions.max 5)}}
+          {{#if (gt actor.system.resources.afflictions.value 5)}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}{{#if isGM}}<li><a class="afflictions-change"><img src="systems/atd6/style/icons/skull_grey.svg" title="Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}{{/if}}
+        {{/if}}
+      </ul>
+      <table class="subtable">
+        <tr>
+          <td>{{#if settings.enableSubTraits}}<h2><label>{{localize "ATD6.ui.subTraits"}}</label></h2>{{/if}}</td>
+          <td>{{#if settings.enableSubStyles}}<h2><label>{{localize "ATD6.ui.subStyles"}}</label></h2>{{/if}}</td>
+        </tr>
+        <tr>
+          <td>
+            {{#if settings.enableSubTraits}}
+              <ul class="subtrait">
+                <a class="subtrait-toggle" data-subtrait="dexterity"><li>{{#if actor.system.subtrait.dexterity}}<img src="systems/atd6/style/icons/dexterity_B.svg" title="DEXTERITY&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/dexterity.svg" title="DEXTERITY&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="reflexes"><li>{{#if actor.system.subtrait.reflexes}}<img src="systems/atd6/style/icons/reflexes_B.svg" title="REFLEXES&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/reflexes.svg" title="REFLEXES&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="stealth"><li>{{#if actor.system.subtrait.stealth}}<img src="systems/atd6/style/icons/stealth_B.svg" title="STEALTH&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/stealth.svg" title="STEALTH&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+            {{/if}}
+          </td>
+          <td>
+            {{#if settings.enableSubStyles}}
+              <ul class="subtrait">
+                <a class="substyle-toggle" data-substyle="armed"><li>{{#if actor.system.substyle.armed}}<img src="systems/atd6/style/icons/armed_B.svg" title="ARMED&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/armed.svg" title="ARMED&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="unarmed"><li>{{#if actor.system.substyle.unarmed}}<img src="systems/atd6/style/icons/unarmed_B.svg" title="UNARMED&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/unarmed.svg" title="UNARMED&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="parry"><li>{{#if actor.system.substyle.parry}}<img src="systems/atd6/style/icons/parry_B.svg" title="PARRY&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/parry.svg" title="PARRY&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+              {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{#if settings.enableSubTraits}}
+              <ul class="subtrait">
+                <a class="subtrait-toggle" data-subtrait="strength"><li>{{#if actor.system.subtrait.strength}}<img src="systems/atd6/style/icons/strength_B.svg" title="STRENGTH&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/strength.svg" title="STRENGTH&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="endurance"><li>{{#if actor.system.subtrait.endurance}}<img src="systems/atd6/style/icons/endurance_B.svg" title="ENDURANCE&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/endurance.svg" title="ENDURANCE&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="athletics"><li>{{#if actor.system.subtrait.athletics}}<img src="systems/atd6/style/icons/athletics_B.svg" title="ATHLETICS&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/athletics.svg" title="ATHLETICS&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+            {{/if}}
+          </td>
+          <td>
+            {{#if settings.enableSubStyles}}
+              <ul class="subtrait">
+                <a class="substyle-toggle" data-substyle="shoot"><li>{{#if actor.system.substyle.shoot}}<img src="systems/atd6/style/icons/shoot_B.svg" title="SHOOT&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/shoot.svg" title="SHOOT&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="throw"><li>{{#if actor.system.substyle.throw}}<img src="systems/atd6/style/icons/throw_B.svg" title="THROW&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/throw.svg" title="THROW&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="evade"><li>{{#if actor.system.substyle.evade}}<img src="systems/atd6/style/icons/evade_B.svg" title="EVADE&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/evade.svg" title="EVADE&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+              {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{#if settings.enableSubTraits}}
+              <ul class="subtrait">
+                <a class="subtrait-toggle" data-subtrait="intellect"><li>{{#if actor.system.subtrait.intellect}}<img src="systems/atd6/style/icons/intellect_B.svg" title="INTELLECT&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/intellect.svg" title="INTELLECT&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="charisma"><li>{{#if actor.system.subtrait.charisma}}<img src="systems/atd6/style/icons/charisma_B.svg" title="CHARISMA&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/charisma.svg" title="CHARISMA&#013;Click to toggle">{{/if}}</li></a>
+                <a class="subtrait-toggle" data-subtrait="perception"><li>{{#if actor.system.subtrait.perception}}<img src="systems/atd6/style/icons/perception_B.svg" title="PERCEPTION&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/perception.svg" title="PERCEPTION&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+            {{/if}}
+          </td>
+          <td>
+            {{#if settings.enableSubStyles}}
+              <ul class="subtrait">
+                <a class="substyle-toggle" data-substyle="magic"><li>{{#if actor.system.substyle.magic}}<img src="systems/atd6/style/icons/magic_B.svg" title="MAGIC&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/magic.svg" title="MAGIC&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="tactics"><li>{{#if actor.system.substyle.tactics}}<img src="systems/atd6/style/icons/tactics_B.svg" title="TACTICS&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/tactics.svg" title="TACTICS&#013;Click to toggle">{{/if}}</li></a>
+                <a class="substyle-toggle" data-substyle="resist"><li>{{#if actor.system.substyle.resist}}<img src="systems/atd6/style/icons/resist_B.svg" title="RESIST&#013;Click to toggle">{{else}}<img src="systems/atd6/style/icons/resist.svg" title="RESIST&#013;Click to toggle">{{/if}}</li></a>
+              </ul>
+              {{/if}}
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section class="right-section">
+        <nav class="sheet-tabs tabs" data-group="primary">
+          <a class="item" data-tab="general">{{localize "ATD6.ui.tab.general"}}</a>
+          <a class="item" data-tab="bio">{{localize "ATD6.ui.tab.notes"}}</a>
+          
+        </nav>
+        {{!-- Item Sheet Body --}}
+        <section class="sheet-body">
+          {{!-- General Tab --}}
+          <div class="tab general" data-group="primary" data-tab="general">
+            {{> "/systems/atd6/templates/actors/parts/general.html"}}
+          </div>
+          {{!-- Notes Tab --}}
+          <div class="tab bio" data-group="primary" data-tab="bio">
+            {{editor actor.system.notes target="system.notes" button=true owner=owner editable=true}}
+          </div>
+        </section>
+    </section>
+  </div>
+</form>

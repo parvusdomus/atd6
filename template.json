@@ -1,0 +1,103 @@
+{
+    "Actor": {
+        "types":
+        [
+            "Player",
+            "NPC"
+        ],
+        "Player": {
+            "resources":{
+                "resolve": {
+                    "value": 3,
+                    "min": 0,
+                    "max": 3
+                },
+                "karma": {
+                    "value": 3,
+                    "min": 0,
+                    "max": 3
+                },
+                "afflictions": {
+                    "value": 0,
+                    "min": 0,
+                    "max": 3
+                }
+            },
+            "rank": 1,
+            "trait": "Agile",
+            "combat": "Ranged",
+            "subtrait": {
+                "dexterity": false,
+                "reflexes": false,
+                "stealth": false,
+                "strength": false,
+                "endurance": false,
+                "athletics": false,
+                "intellect": false,
+                "charisma": false,
+                "perception": false
+            },
+            "substyle": {
+                "armed": false,
+                "unarmed": false,
+                "parry": false,
+                "shoot": false,
+                "throw": false,
+                "evade": false,
+                "magic": false,
+                "tactics": false,
+                "resist": false
+            },
+            "initiative": "2d6cs>=5",
+            "concept": "",
+            "notes": ""
+        },
+        "NPC": {
+            "resources":{
+                "effort": {
+                    "value": 3,
+                    "min": 0,
+                    "max": 3
+                }
+            },
+            "initiative": "0.99",
+            "traits": "",
+            "rank": 1,
+            "description": ""
+        }
+    },
+    "Item": {
+        "types":
+        [
+            "perk",
+            "quirk",
+            "affliction",
+            "knack"
+        ],
+        "perk": {
+            "tag": "",
+            "bg_color": "#ffffff",
+            "text_color": "#000000",
+            "desc": ""
+        },
+        "knack": {
+            "tag": "",
+            "bg_color": "#ffffff",
+            "text_color": "#000000",
+            "desc": ""
+        },
+        "quirk": {
+            "tag": "",
+            "bg_color": "#ffffff",
+            "text_color": "#000000",
+            "desc": ""
+        },
+        "affliction": {
+            "tag": "",
+            "bg_color": "#ffffff",
+            "text_color": "#000000",
+            "desc": ""
+        }
+    }
+
+}
