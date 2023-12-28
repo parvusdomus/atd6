@@ -1,0 +1,36 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <div class="charsheet">
+    <section class="top-section">
+        <nav class="sheet-tabs tabs" data-group="primary">
+          <a class="item" data-tab="general">{{localize "ATD6.ui.tab.general"}}</a>
+          <a class="item" data-tab="inventory">{{localize "ATD6.ui.tab.inventory"}}</a>
+          <a class="item" data-tab="traits">{{localize "ATD6.ui.tab.traits"}}</a>
+          <a class="item" data-tab="magic">{{localize "ATD6.ui.tab.magic"}}</a>
+          <a class="item" data-tab="description">{{localize "ATD6.ui.tab.description"}}</a>    
+        </nav>
+        {{!-- Item Sheet Body --}}
+        <section class="sheet-body">
+          {{!-- General Tab --}}
+          <div class="tab general" data-group="primary" data-tab="general">
+            {{> "/systems/atd6/templates/actors/player/parts/general.html"}}
+          </div>
+          {{!-- Inventory Tab --}}
+          <div class="tab inventory" data-group="primary" data-tab="inventory">
+            {{> "/systems/atd6/templates/actors/player/parts/inventory.html"}}
+          </div>
+          {{!-- Traits Tab --}}
+          <div class="tab traits" data-group="primary" data-tab="traits">
+            {{> "/systems/atd6/templates/actors/player/parts/traits.html"}}
+          </div>
+          {{!-- Magic Tab --}}
+          <div class="tab magic" data-group="primary" data-tab="magic">
+            {{> "/systems/atd6/templates/actors/player/parts/magic.html"}}
+          </div>
+          {{!-- Notes Tab --}}
+          <div class="tab description" data-group="primary" data-tab="description">
+            {{> "/systems/atd6/templates/actors/player/parts/description.html"}}
+          </div>
+        </section>
+    </section>
+  </div>
+</form>

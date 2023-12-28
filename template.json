@@ -2,102 +2,138 @@
     "Actor": {
         "types":
         [
-            "Player",
-            "NPC"
+            "player",
+            "npc"
         ],
-        "Player": {
+        "player": {
             "resources":{
-                "resolve": {
-                    "value": 3,
-                    "min": 0,
-                    "max": 3
-                },
-                "karma": {
-                    "value": 3,
-                    "min": 0,
-                    "max": 3
-                },
-                "afflictions": {
+                "health": {
+                    "base": 0,
+                    "bonus": 0,
                     "value": 0,
                     "min": 0,
-                    "max": 3
+                    "max": 5
                 }
             },
-            "rank": 1,
-            "trait": "Agile",
-            "combat": "Ranged",
-            "subtrait": {
-                "dexterity": false,
-                "reflexes": false,
-                "stealth": false,
-                "strength": false,
-                "endurance": false,
-                "athletics": false,
-                "intellect": false,
-                "charisma": false,
-                "perception": false
+            "ac": {
+                "base": 3,
+                "bonus": 0,
+                "total": 0
             },
-            "substyle": {
-                "armed": false,
+            "speed": {
+                "base": 25,
+                "bonus": 0,
+                "total": 0
+            },
+            "competence": {
+                "meleelight": false,
+                "meleeheavy": false,
+                "rangedlight": false,
+                "rangedheavy": false,
                 "unarmed": false,
-                "parry": false,
-                "shoot": false,
-                "throw": false,
-                "evade": false,
-                "magic": false,
-                "tactics": false,
-                "resist": false
+                "improvised": false,
+                "dominated": ""
             },
+            "gender": "",
+            "age": "",
+            "size": "",
+            "trade": "",
+            "belief": "",
+            "heritage": "",
+            "languages": "",
+            "class": "",
+            "level": 1,
+            "xp": 0,
             "initiative": "2d6cs>=5",
-            "concept": "",
-            "notes": ""
+            "canusemagic": false,
+            "canuseshield": false,
+            "canuseheavyarmor": false,
+            "description": ""
         },
         "NPC": {
             "resources":{
-                "effort": {
-                    "value": 3,
+                "health": {
+                    "base": 0,
+                    "bonus": 0,
+                    "value": 0,
                     "min": 0,
-                    "max": 3
+                    "max": 5
                 }
             },
+            "threat": "",
+            "ac": {
+                "base": 3,
+                "bonus": 0,
+                "total": 0
+            },
             "initiative": "0.99",
-            "traits": "",
-            "rank": 1,
             "description": ""
         }
     },
     "Item": {
         "types":
         [
-            "perk",
-            "quirk",
-            "affliction",
-            "knack"
+            "heritage",
+            "trait",
+            "weapon",
+            "armor",
+            "shield",
+            "spell",
+            "object"
         ],
-        "perk": {
-            "tag": "",
-            "bg_color": "#ffffff",
-            "text_color": "#000000",
-            "desc": ""
+        "heritage": {
+            "health": 5,
+            "ac": 3,
+            "speed": 25,
+            "languages": "",
+            "description": ""
         },
-        "knack": {
-            "tag": "",
-            "bg_color": "#ffffff",
-            "text_color": "#000000",
-            "desc": ""
+        "trait": {
+            "requisite": "",
+            "traittype": "open",
+            "label": "",
+            "description": ""
         },
-        "quirk": {
-            "tag": "",
-            "bg_color": "#ffffff",
-            "text_color": "#000000",
-            "desc": ""
+        "weapon": {
+            "cost": 0,
+            "durability": 6,
+            "slots": 1,
+            "weapontype": "meleelight",
+            "equipped": false,
+            "competent": false,
+            "mastered": false,
+            "description": ""
         },
-        "affliction": {
-            "tag": "",
-            "bg_color": "#ffffff",
-            "text_color": "#000000",
-            "desc": ""
+        "armor": {
+            "cost": 0,
+            "durability": 6,
+            "slots": 1,
+            "armortype": "light",
+            "equipped": false,
+            "competent": false,
+            "description": ""
+        },
+        "shield": {
+            "cost": 0,
+            "durability": 6,
+            "slots": 1,
+            "equipped": false,
+            "competent": false,
+            "description": ""
+        },
+        "spell": {
+            "cost": 0,
+            "spelltype": "innate",
+            "favourite": false,
+            "description": ""
+        },
+        "object": {
+            "cost": 0,
+            "durability": 6,
+            "slots": 1,
+            "description": ""
         }
+
     }
 
 }

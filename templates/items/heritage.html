@@ -1,0 +1,35 @@
+<form class="{{cssClass}} atd6" autocomplete="off">
+    <div class="item-name">
+        <table>
+            <tr>
+                <td>
+                    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{name}}" alt='Imagen del Rasgo'/>
+                </td>
+                <td>
+                    <h2><input name="name" type="text" value="{{item.name}}" placeholder='Trait' onClick="this.select();"/></h2>
+                </td>
+            </tr>
+        </table>   
+    </div>
+    <div class="item-stats">
+        <table>
+            <tr>
+                <td><h3><label>&nbsp;{{localize "ATD6.ui.health"}}&nbsp;</label></h3></td>
+                <td><h3><input style="width:100%;" name="system.health" type="number" maxlength="2" size="2" value="{{item.system.health}}" data-dtype="Number"/></h3></td>
+                <td><h3><label>&nbsp;{{localize "ATD6.ui.ac"}}&nbsp;</label></h3></td>
+                <td><h3><input style="width:100%;" name="system.ac" type="number" maxlength="2" size="2" value="{{item.system.ac}}" data-dtype="Number"/></h3></td>
+                <td><h3><label>&nbsp;{{localize "ATD6.ui.speed"}}&nbsp;</label></h3></td>
+                <td><h3><input style="width:100%;" name="system.speed" type="number" maxlength="2" size="2" value="{{item.system.speed}}" data-dtype="Number"/></h3></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td><h3><label>&nbsp;{{localize "ATD6.ui.languages"}}&nbsp;</label></h3></td>
+                <td><h3><input style="width:100%;" name="system.languages" type="text" value="{{item.system.languages}}" data-dtype="String"/></h3></td>
+            </tr>
+        </table>
+    </div>
+    <div class="heritagedescription">
+        {{editor item.system.description target="system.description" button=true owner=owner editable=true}}
+    </div>
+</form>

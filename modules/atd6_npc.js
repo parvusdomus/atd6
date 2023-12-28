@@ -2,7 +2,7 @@ export default class ATD6_CHALLENGE_SHEET extends ActorSheet{
     static get defaultOptions() {
       return mergeObject(super.defaultOptions, {
           classes: ["atd6", "sheet", "actor"],
-          template: "systems/atd6/templates/actors/challenge.html",
+          template: "systems/atd6/templates/actors/npc.html",
           width: 600,
           height: 505,
           tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "general" }]

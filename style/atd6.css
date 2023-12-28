@@ -1,404 +1,26 @@
 @font-face {
-    font-family: "Dominican";
-    src: url("../../../systems/tricube/style/fonts/Dominican.ttf");
-}
-
-@font-face {
-    font-family: "Almendrasc";
-    src: url("../../../systems/tricube/style/fonts/Almendrasc.ttf");
-}
-
-@font-face {
-    font-family: "Amble";
-    src: url("../../../systems/tricube/style/fonts/Amble.ttf");
-}
-
-@font-face {
     font-family: "Bagnard";
-    src: url("../../../systems/tricube/style/fonts/Bagnard.otf");
+    src: url("../../../systems/atd6/style/fonts/Bagnard.otf");
 }
 
 @font-face {
-    font-family: "Arkhip";
-    src: url("../../../systems/tricube/style/fonts/Arkhip.ttf");
+    font-family: "atd6";
+    src: url("../../../systems/atd6/style/fonts/QUENCRG_.TTF");
 }
 
-@font-face {
-    font-family: "Bangers";
-    src: url("../../../systems/tricube/style/fonts/Bangers.ttf");
-}
-
-@font-face {
-    font-family: "Berry";
-    src: url("../../../systems/tricube/style/fonts/Berry.ttf");
-}
-
-@font-face {
-    font-family: "BLACC";
-    src: url("../../../systems/tricube/style/fonts/BLACC.ttf");
-}
-
-@font-face {
-    font-family: "BLOODY";
-    src: url("../../../systems/tricube/style/fonts/BLOODY.ttf");
-}
-
-@font-face {
-    font-family: "Cinzel";
-    src: url("../../../systems/tricube/style/fonts/Cinzel.otf");
-}
-
-@font-face {
-    font-family: "Corleone";
-    src: url("../../../systems/tricube/style/fonts/Corleone.TTF");
-}
-
-@font-face {
-    font-family: "Creepster";
-    src: url("../../../systems/tricube/style/fonts/Creepster.ttf");
-}
-
-@font-face {
-    font-family: "Duvall";
-    src: url("../../../systems/tricube/style/fonts/Duvall.ttf");
-}
-
-@font-face {
-    font-family: "East_Anglia";
-    src: url("../../../systems/tricube/style/fonts/East_Anglia.ttf");
-}
-
-@font-face {
-    font-family: "Foul";
-    src: url("../../../systems/tricube/style/fonts/Foul.ttf");
-}
-
-@font-face {
-    font-family: "Headhunter";
-    src: url("../../../systems/tricube/style/fonts/Headhunter.ttf");
-}
-
-@font-face {
-    font-family: "IMMORTAL";
-    src: url("../../../systems/tricube/style/fonts/IMMORTAL.ttf");
-}
-
-@font-face {
-    font-family: "IMPOS5";
-    src: url("../../../systems/tricube/style/fonts/IMPOS5.ttf");
-}
-
-@font-face {
-    font-family: "Mandalore_Halftone";
-    src: url("../../../systems/tricube/style/fonts/Mandalore_Halftone.ttf");
-}
-
-@font-face {
-    font-family: "mandalore";
-    src: url("../../../systems/tricube/style/fonts/mandalore.ttf");
-}
-
-@font-face {
-    font-family: "MetalMacabre";
-    src: url("../../../systems/tricube/style/fonts/MetalMacabre.ttf");
-}
-
-@font-face {
-    font-family: "MountainsofChristmas";
-    src: url("../../../systems/tricube/style/fonts/MountainsofChristmas.ttf");
-}
-
-@font-face {
-    font-family: "MysteryQuest";
-    src: url("../../../systems/tricube/style/fonts/MysteryQuest.ttf");
-}
-
-@font-face {
-    font-family: "Nautilus";
-    src: url("../../../systems/tricube/style/fonts/Nautilus.otf");
-}
-
-@font-face {
-    font-family: "OhioKraft";
-    src: url("../../../systems/tricube/style/fonts/OhioKraft.otf");
-}
-
-@font-face {
-    font-family: "Orbitron";
-    src: url("../../../systems/tricube/style/fonts/Orbitron.ttf");
-}
-
-@font-face {
-    font-family: "pirulen";
-    src: url("../../../systems/tricube/style/fonts/pirulen.otf");
-}
-
-@font-face {
-    font-family: "RexliaRg";
-    src: url("../../../systems/tricube/style/fonts/RexliaRg.ttf");
-}
-
-@font-face {
-    font-family: "RifficFree";
-    src: url("../../../systems/tricube/style/fonts/RifficFree.ttf");
-}
-
-@font-face {
-    font-family: "Saddlebag";
-    src: url("../../../systems/tricube/style/fonts/Saddlebag.ttf");
-}
-
-@font-face {
-    font-family: "Skia";
-    src: url("../../../systems/tricube/style/fonts/Skia.ttf");
-}
-
-@font-face {
-    font-family: "Starjedi";
-    src: url("../../../systems/tricube/style/fonts/Starjedi.ttf");
-}
-
-@font-face {
-    font-family: "TradeWinds";
-    src: url("../../../systems/tricube/style/fonts/TradeWinds.ttf");
-}
-
-@font-face {
-    font-family: "Werewolf_Moon";
-    src: url("../../../systems/tricube/style/fonts/Werewolf_Moon.ttf");
-}
-
-@font-face {
-    font-family: "WHITC";
-    src: url("../../../systems/tricube/style/fonts/WHITC.ttf");
-}
-
-@font-face {
-    font-family: "WIZARDRY";
-    src: url("../../../systems/tricube/style/fonts/WIZARDRY.ttf");
-}
-
-@font-face {
-    font-family: "xirod";
-    src: url("../../../systems/tricube/style/fonts/xirod.otf");
-}
-
-@font-face {
-    font-family: "Yataghan";
-    src: url("../../../systems/tricube/style/fonts/Yataghan.otf");
-}
-
-@font-face {
-    font-family: "StoneAge";
-    src: url("../../../systems/tricube/style/fonts/StoneAge.otf");
-}
 .charsheet {
     display: flex;
+    width: 100%;
   }
 
-.left-section {
-    width: 40%;
-    max-height: 100%;
-    text-align: center;
-}
-
-.left-section h2{
-    font-family: var(--font-name);
-    color: var(--header-font-color);
-    border-bottom: none;
+.top-section {
+    width: 100%;
 }
 
 .char-pic img{
-    border-radius: 16px;
-    width: 195px;
-    height: 195px;
-}
-
-.char-name input{
-    font-family: var(--font-name);
-    border-radius: 16px; 
+    width: 150px;
+    height: 150px;
     background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-}
-
-.resources {
-    list-style: none;
-    margin: -0.5em 0px;
-    padding: 0px 0px 0px 0.5em;
-}
-
-.resources li {
-    display: inline-block;
-    padding: 0px 1px;
-}
-
-.resources img {
-    width: 30px;
-    height: 30px;
-    border: none;
-    margin: auto;
-}
-
-.dices {
-    list-style: none;
-    margin: -0.5em 0px;
-    padding: 10px 0px 0px 0.5em;
-}
-
-.dices li {
-    display: inline-block;
-    padding: 0px 1px;
-}
-
-.dices img {
-    width: 60px;
-    height: 60px;
-    border: none;
-    margin: auto;
-}
-
-.sheet nav.sheet-tabs {
-    font-family: var(--font-name);
-    margin: 4px 0;
-    border-top: none;
-    border-bottom: none;
-}
-
-.sheet .tabs .item.active {
-    background: var(--tab-bg-color-active);
-    color: var(--tab-text-color-active);
-    text-shadow: none;
-}
-
-.sheet .tabs .item:hover {
-    background: var(--tab-bg-color-hover);
-    color: var(--tab-text-color-hover);
-    text-shadow: none;
-}
-
-.right-section {
-    width: 60%;
-    height: 100%;
-}
-
-.editor-content, .editor, .tox,.tox-edit-area, .tox-tinymce
-{
-    list-style: circle;
-    text-align: left;
-    padding: 5px;
-	background-color: rgba(245, 245, 220, 0.5);
-    color: #000000;
-    height: 400px;
-}
-
-.archetype {
-    list-style: none;
-    margin: -0.5em 0px;
-    padding: 0px 0px 0px 0.5em;
-}
-
-.archetype h1 {
-    color: var(--header-font-color);
-    font-family: var(--font-name);
-    border-bottom: none;
-}
-
-.archetype li {
-    display: inline-block;
-    padding: 5px 1px;
-    vertical-align: middle;
-}
-
-.archetype img {
-    width: 30px;
-    height: 30px;
-    border: none;
-    margin: auto;
-}
-
-.archetype input {
-    width: 155%;
-    border-radius: 16px;
-    text-align: center;
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-}
-
-.npctag {
-    list-style: none;
-    margin: -0.5em 0px;
-    padding: 0px 0px 0px 0.5em;
-}
-
-.npctag h1 {
-    color: var(--header-font-color);
-    border-bottom: none;
-}
-
-.npctag li {
-    display: inline-block;
-    padding: 5px 1px;
-    vertical-align: middle;
-}
-
-.npctag input {
-    width: 200%;
-    border-radius: 16px;
-    text-align: center;
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-}
-
-.item-list {
-    width: 100%;
-    border: none;
-}
-
-
-.item-list th{
-    border: none;
-    background-color: var(--list-header-color);
-    color: var(--list-header-font-color);
-    padding-left: 10px;
-    padding-right: 8px;
-    
-}
-.item-header {
-    font-family: var(--font-name);
-    border-bottom: none;
-    text-align: left;
-    vertical-align: middle;
-    display: table-cell;
-}
-.item-list td{
-    color: var(--list-text-color);
-}
-
-.item-controls {
-    align-items: right;
-    text-align: right;
-}
-
-.item-name input{
-    border-radius: 16px; 
-    text-align: center;
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-}
-
-.item-name h2{
-    color: var(--header-font-color);
-    font-family: var(--font-name);
-    text-align: center;
-    border-bottom: none;
-}
-
-.dice-roll .dice-tooltip {
-    display: block !important;
-}
-
-.tag li{
-    display: inline-block;
 }
 
 #pause .pause-image {
@@ -423,176 +45,347 @@
 :root { 
     --bg-image: url("../../../systems/tricube/style/images/white.webp");
     --chat-bg-image: url("../../../systems/tricube/style/images/white.webp");
-    --font-name: "Dominican";
+    --header-font-name: "atd6";
+    --header-font-name2: "Bagnard";
     --main-font-color: #000000;
     --header-font-color: #000000;
     --list-header-font-color: #ffffff;
     --list-header-color: #000000;
-    --input-bg-color: #ffffdc;
+    --input-bg-color: #555353;
+    --input-bg-color2: #ffffff;
     --list-text-color: #000000;
-    --input-text-color: #000000;
+    --input-text-color: #ffffff;
     --window-header-bg-color: #000000;
     --window-header-font-color: #ffffff;
-    --die-roller-button-bg-color: #ffffff;
-    --die-roller-button-font-color: #000000;
-    --die-roller-font-color: #000000;
     --tab-bg-color-active: #000000;
-    --tab-bg-color-hover: #555353;
+    --tab-bg-color-inactive: #555353;
     --tab-text-color-active: #ffffff;
-    --tab-text-color-hover: #d8d1d1;
+    --tab-text-color-inactive: #d8d1d1;
 
 }
 
-.tricube{  
-
-}
-
-.tricube .window-content{
+.atd6 .window-content{
     background-color: white;
     background: var(--bg-image) no-repeat;
     background-size: 100% 100%;
 }
 
-.test-result{
-    text-align: center;
-}
-.test-result h3{
-    font-family: var(--font-name);
-    
+.sheet nav.sheet-tabs {
+    background: var(--tab-bg-color-inactive);
+    font-family: var(--header-font-name);
+    margin: 4px 0;
+    border-top: none;
     border-bottom: none;
-}
-
-
-.dice-breakdown{
-    text-align: center;
-}
-
-#die-roller-move-handle{
-    z-index: 101;
-    font-size: 1px;
-    line-height: 100%;
-    position: absolute;
-    top: 0;
-    bottom:0;
-    left: 0;
-    width: 10px;
-    background: rgba(51, 51, 51, 0.8);
-}
-
-
-.die-roller .window-header
-{
-    display: none;
-    visibility: hidden;
-    height: 0;
-}
-
-.die-roller h2{
-    font-family: var(--font-name);
-    color: var(--die-roller-font-color);
-    border-bottom: none;
-    text-align: center;
     
 }
 
-.die-roller button{
-    color: var(--die-roller-button-font-color);
-    background-color: var(--die-roller-button-bg-color);
+.sheet .tabs .item.active {
+    background: var(--tab-bg-color-active);
+    color: var(--tab-text-color-active);
+    text-shadow: none;
 }
 
-.d-flex{
-    display:flex!important;
+.sheet .tabs .item:not(.active) {
+    background: var(--tab-bg-color-inactive);
+    color: var(--tab-text-color-inactive);
+    text-shadow: none;
+}
+
+.generalinfo table{
+    background: none;
+    border: none;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.generalinfo tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.generalinfo tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.generalinfo td{
+    vertical-align: top;
+}
+.generalinfo h1{
+    border-bottom: none;
+    text-align: center;
+}
+
+.generalinfo tr{
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.generalinfo input{
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    border: none;
+}
+
+.generalinfo label{
+    font-family: var(--header-font-name2);
+}
+
+.charinput h2{
+    border-bottom: none;
+    text-align: center;
+}
+
+.generalinfo2 table{
+    background: none;
+    border: none;
+}
+
+.generalinfo2 td{
+    vertical-align: center;
+    text-align: center;
     align-items: center;
 }
 
-.die-roller input{
-    font-family: var(--font-name);
-    border-radius: 16px; 
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-    font-size: 1em;
+.generalinfo2 h3{
+    border-bottom: none;
     text-align: center;
 }
 
-.subtrait {
-    list-style: none;
-    margin: -0.5em 0px;
-    padding: 0px 0px 0px 0.5em;
+.generalinfo3 table{
+    background: none;
+    border: none;
 }
 
-.subtrait h1 {
-    color: var(--header-font-color);
-    font-family: var(--font-name);
+.generalinfo3 td{
+    vertical-align: center;
+    text-align: center;
+    align-items: center;
+}
+
+.generalinfo3 h3{
+    border-bottom: none;
+    text-align: center;
+}
+
+.generalinfo3 td:nth-child(1){
+    width: 70px;
+}
+
+.heritage table{
+    background: none;
+    border: none;
+}
+
+
+.heritage tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.heritage tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.heritage h3{
     border-bottom: none;
 }
 
-.subtrait li {
+.heritage input{
+    text-align: center;
+}
+
+.resources table{
+    background: none;
+    border: none;
+}
+
+.resources tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.resources tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.resources td{
+    text-align: left;
+    vertical-align: center;
+}
+
+.resources h3{
+    border-bottom: none;
+}
+
+.resources label{
+    color: var(--main-font-color);
+}
+
+.competences table{
+    background: none;
+    background-color: var(--input-bg-color);
+    border: none;
+}
+
+.competences tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.competences tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.competences td{
+    text-align: left;
+    vertical-align: 0%;
+    padding-bottom: 0px;
+    padding-top: 7px;
+}
+
+.competences h3{
+    border-bottom: none;
+}
+
+.competences label{
+    color: var(--input-text-color);
+}
+
+.competences a{
+    color: var(--input-text-color);
+}
+
+.competences input{
+    background-color: var(--input-bg-color2);
+    color: var(--main-font-color);
+    border: none;
+}
+
+.item-name input{
+    text-align: center;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+.item-name h2{
+    color: var(--header-font-color);
+    font-family: var(--font-name);
+    text-align: center;
+    border-bottom: none;
+}
+
+.item-name{
     display: inline-block;
-    padding: 5px 1px;
-    vertical-align: middle;
 }
 
-.subtrait img {
-    width: 30px;
-    height: 30px;
+.item-name table{
+    background: none;
+    width: 115%;
     border: none;
-    margin: auto;
 }
 
-.subtable {
+.item-name td{
+    vertical-align: top;
+}
+
+.item-name img{
+    border-radius: 16px;
+    width: 75px;
+    height: 75px;
+    background-color: #555353;
+}
+
+.item-stats table{
+    background: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
 }
 
-.subtable tr:nth-child(even){
-    background-color: rgba(255, 255, 255, 0);
+.item-stats td{
+    text-align: center;
 }
 
-.subtable tr:nth-child(odd){
-    background-color: rgba(255, 255, 255, 0);
+.item-stats h3{
+    border-bottom: none;
+    font-family: var(--header-font-name2);
 }
 
-.regular-success {
-    background-color: rgba(0, 128, 0, 0.5);
-    color: white;
+.item-stats input{
+    text-align: center;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
 }
 
-.critical-success {
-    background-color: rgba(0, 0, 128, 0.5);
-    color: white;
+.item-stats select{
+    text-align: center;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
 }
 
-.regular-failure {
-    background-color: rgba(128, 128, 128, 0.5);
-    color: white;
+.equipment-title table{
+    background-color: var(--input-bg-color);
+    text-align: center;
+    border: none;
+    width: 100%;
+    color: var(--input-text-color);
 }
 
-.critical-failure {
-    background-color: rgba(128, 0, 0, 0.5);
-    color: white;
+.equipment-title td{
+    padding-bottom: 0px;
+    padding-top: 7px;
 }
 
-.disabled {
-    background-color: rgba(128, 128, 128, 0.5);
-    color: white;
+
+.equipment-title h3{
+    border-bottom: none;
+    font-family: var(--header-font-name);
 }
 
-.enabled {
-    background-color: rgba(218, 165, 32, 0.5);
-    color: white;
+.content table{
+    background: none;
+    border: none;
+    width: 100%;
 }
 
-.chat-message {
-    background: var(--chat-bg-image) no-repeat;
-    background-size: 100% 100%;
+.content img {
+    width: 40px;
+    background-color: var(--input-bg-color);
 }
 
-.resolve-button {
-    background-color: rgba(128, 0, 0, 0.5);
-    color: white;
+
+.editor {
+    height: 100%;
 }
 
-.karma-button {
-    background-color: rgba(0, 128, 0, 0.5);
-    color: white;
+.editor-content
+{
+    list-style: circle;
+    text-align: left;
+    padding: 5px;
+	background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+}
+
+.pjdescription {
+    height: 532px;
+}
+
+.weapondescription {
+    height: 200px;
+}
+
+.heritagedescription {
+    height: 200px;
+}
+
+.armordescription {
+    height: 200px;
+}
+
+.traitdescription {
+    height: 200px;
+}
+
+.spelldescription {
+    height: 200px;
 }

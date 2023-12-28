@@ -1,0 +1,40 @@
+<form class="{{cssClass}} atd6" autocomplete="off">
+    <div class="item-name">
+        <table>
+            <tr>
+                <td>
+                    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{name}}" alt='Imagen del Rasgo'/>
+                </td>
+                <td>
+                    <h2><input name="name" type="text" value="{{item.name}}" placeholder='Trait' onClick="this.select();"/></h2>
+                </td>
+            </tr>
+        </table>   
+    </div>
+    <div class="item-stats">
+        <table>
+            <tr>
+                <td><h3><label>&nbsp;{{localize "ATD6.ui.prerequisite"}}&nbsp;</label></h3></td>
+                <td><h3><input style="width:100%;" name="system.requisite" type="text" value="{{item.system.requisite}}" data-dtype="String"/></h3></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td><h3><label>&nbsp;{{localize "ATD6.ui.weapontype"}}&nbsp;</label></h3></td>
+                <td>
+                    <h3><select name="system.traittype" data-dtype="String">
+                        {{#select item.system.traittype}}
+                          <option value="open">{{localize "ATD6.ui.open"}}</option>
+                          <option value="heritage">{{localize "ATD6.ui.heritage"}}</option>
+                          <option value="class">{{localize "ATD6.ui.class"}}</option>
+                        {{/select}}
+                    </select></h3>
+                </td>
+                <td><h3><input style="width:100%;" name="system.label" type="text" value="{{item.system.label}}" data-dtype="String"/></h3></td>
+            </tr>
+        </table>
+    </div>
+    <div class="traitdescription">
+        {{editor item.system.description target="system.description" button=true owner=owner editable=true}}
+    </div>
+</form>
