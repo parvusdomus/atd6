@@ -3,6 +3,7 @@ import ATD6_NPC_SHEET from "./modules/atd6_npc.js";
 import ATD6_ITEM_SHEET from "./modules/atd6_itemsheet.js";
 import { preloadHandlebarsTemplates } from "./modules/preloadTemplates.js";
 import {_getInitiativeFormula} from './modules/combat.js';
+import {diceToFaces} from "./modules/rolls.js";
 import atd6Chat from "./modules/chat.js";
 
 Hooks.once("init", function(){
@@ -52,6 +53,8 @@ Handlebars.registerHelper("times", function(n, content)
     
       return result;
     });
+    
+Handlebars.registerHelper("face", diceToFaces);
 //Hooks.on('renderChatLog', (app, html, data) => atd6Chat.chatListeners(html))
 
 //Hooks.on('refreshToken', () => {

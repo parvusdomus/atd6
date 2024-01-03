@@ -58,5 +58,20 @@
 
     "ATD6.messages.cantAddMore": "No puedes añadir más de un objeto de ese tipo.",
     "ATD6.messages.deleteTitle": "¿Borrar objeto?.",
-    "ATD6.messages.deleteText": "¿Estás seguro de que quieres borrar este objeto?"
+    "ATD6.messages.deleteText": "¿Estás seguro de que quieres borrar este objeto?",
+
+    "ATD6.dialog.focus": "Foco",
+    "ATD6.dialog.disadvantage": "Desventaja",
+    "ATD6.dialog.normal": "Normal",
+    "ATD6.dialog.advantage": "Ventaja",
+    "ATD6.dialog.difficulty": "Dificultad",
+    "ATD6.dialog.diceRoll": "Tirada de Dados",
+    "ATD6.dialog.easydiff": "Fácil",
+    "ATD6.dialog.normaldiff": "Normal",
+    "ATD6.dialog.difficultdiff": "Difícil",
+
+    "ATD6.chat.regularSuccess": "Éxito Normal",
+    "ATD6.chat.criticalSuccess": "Éxito Crítico",
+    "ATD6.chat.regularFailure": "Fallo Normal",
+    "ATD6.chat.criticalFailure": "Fallo Crítico"
 }

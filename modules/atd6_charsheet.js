@@ -1,3 +1,4 @@
+import {DiceRoll} from "./rolls.js";
 export default class ATD6_CHAR_SHEET extends ActorSheet{
     static get defaultOptions() {
       return mergeObject(super.defaultOptions, {
@@ -348,10 +349,51 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
 		  return;
     }
 
-    async _onDiceRoll (event, data)
+    async _onDiceRoll(event)
     {
-      event.preventDefault();
-      console.log ("ON DICE ROLL")
+      let html_content='<table style="background: none; border:none; text-align: center;"><tr><td><label>'+game.i18n.localize("ATD6.dialog.focus")+'</label><input type="checkbox"' 
+      html_content+=' name="focus" id="focus"></td>'
+      html_content+='<td><label>'+game.i18n.localize("ATD6.dialog.difficulty")+'</label></td><td><select name="difficulty" id="difficulty" data-dtype="Number"><option value=-1>'+game.i18n.localize("ATD6.dialog.easydiff")+'</option><option value=0 selected>'+game.i18n.localize("ATD6.dialog.normaldiff")+'</option><option value=+1>'+game.i18n.localize("ATD6.dialog.difficultdiff")+'</option></select></td>'
+      html_content+='</tr></table>'
+
+      let d = new Dialog({
+        title: game.i18n.localize("ATD6.dialog.diceRoll"),
+        content: html_content,
+        buttons: {
+         desventaja: {
+          icon: '<i class="fa-solid fa-cube"></i>',
+          label: game.i18n.localize("ATD6.dialog.disadvantage"),
+          callback: () => {
+            let focus=document.getElementById("focus").checked;
+            let difficulty=document.getElementById("difficulty").value;
+            DiceRoll('desventaja',focus,difficulty)
+          }
+         },
+         normal: {
+          icon: '<i class="fa-solid fa-dice"></i>',
+          label: game.i18n.localize("ATD6.dialog.normal"),
+          callback: () => {
+            let focus=document.getElementById("focus").checked;
+            let difficulty=document.getElementById("difficulty").value;
+            DiceRoll('normal',focus,difficulty)
+          }
+         },
+         ventaja: {
+          icon: '<i class="fa-solid fa-cubes"></i>',
+          label: game.i18n.localize("ATD6.dialog.advantage"),
+          callback: () => {
+            let focus=document.getElementById("focus").checked;
+            let difficulty=document.getElementById("difficulty").value;
+            DiceRoll('ventaja',focus,difficulty)
+          }
+         }
+        },
+        default: "normal",
+        render: html => console.log("Register interactivity in the rendered dialog"),
+        close: html => console.log("This always is logged no matter which option is chosen")
+       });
+       d.render(true);
+      return;
     }
 
     _onEffectControl(event) {

@@ -425,3 +425,36 @@
     text-align: right;
 }
 
+.regular-success {
+    background-color: rgba(0, 128, 0, 0.5);
+    color: white;
+}
+
+.critical-success {
+    background-color: rgba(0, 0, 128, 0.5);
+    color: white;
+}
+
+.regular-failure {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: white;
+}
+
+.critical-failure {
+    background-color: rgba(128, 0, 0, 0.5);
+    color: white;
+}
+
+.test-result{
+    text-align: center;
+}
+.test-result h3{
+    font-family: var(--font-name);
+    border-bottom: none;
+}
+
+
+.dice-breakdown{
+    text-align: center;
+}
+
