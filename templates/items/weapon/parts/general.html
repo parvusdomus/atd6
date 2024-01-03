@@ -1,0 +1,35 @@
+<div class="item-stats">
+    <table>
+        <tr>
+            <td><h3><label>&nbsp;{{localize "ATD6.ui.cost"}}&nbsp;</label></h3></td>
+            <td><h3><input style="width:100%;" name="system.cost" type="number" maxlength="2" size="2" value="{{item.system.cost}}" data-dtype="Number"/></h3></td>
+            <td><h3><label>&nbsp;{{localize "ATD6.ui.slots"}}&nbsp;</label></h3></td>
+            <td><h3><input style="width:100%;" name="system.slots" type="number" maxlength="2" size="2" value="{{item.system.slots}}" data-dtype="Number"/></h3></td>
+            <td><h3><label>&nbsp;{{localize "ATD6.ui.durability"}}&nbsp;</label></h3></td>
+            <td><h3><input style="width:100%;" name="system.durability" type="number" maxlength="2" size="2" value="{{item.system.durability}}" data-dtype="Number"/></h3></td>
+            <td><h3><i class="fa-solid fa-dice"></i></h3></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><h3><label>&nbsp;{{localize "ATD6.ui.weapontype"}}&nbsp;</label></h3></td>
+            <td>
+                <h3><select name="system.weapontype" data-dtype="String">
+                    {{#select item.system.weapontype}}
+                      <option value="meleelight">{{localize "ATD6.ui.meleelight"}}</option>
+                      <option value="meleeheavy">{{localize "ATD6.ui.meleeheavy"}}</option>
+                      <option value="rangedlight">{{localize "ATD6.ui.rangedlight"}}</option>
+                      <option value="rangedheavy">{{localize "ATD6.ui.rangedheavy"}}</option>
+                      <option value="unarmed">{{localize "ATD6.ui.unarmed"}}</option>
+                      <option value="improvised">{{localize "ATD6.ui.improvised"}}</option>
+                    {{/select}}
+                </select></h3>
+            </td>
+            <td><h3><label>&nbsp;{{localize "ATD6.ui.dominated"}}&nbsp;</label></h3></td>
+            <td><h3><input type="checkbox" {{checked item.system.mastered}} name="system.mastered"></h3></td>
+        </tr>
+    </table>
+</div>
+<div class="weapondescription">
+    {{editor item.system.description target="system.description" button=true owner=owner editable=true}}
+</div>

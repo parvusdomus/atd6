@@ -3,7 +3,7 @@
         <tr>
             <td style="width: 155px;">
                 <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
-                <h1><i class="fa-solid fa-dice"></i></h1>
+                <h1><a class="dice-roll"><i class="fa-solid fa-dice"></i></a></h1>
             </td>
             <td>
                 <table>
@@ -277,7 +277,7 @@
                     </label>   
                 </td>
                 <td style="width: 50px; text-align: right;">
-                    <a class="item-equip" data-id="{{item._id}}">
+                    <a class="item-favourite" data-id="{{item._id}}">
                         {{#if item.system.equipped}}
                             <i class="fa-solid fa-star"></i>
                         {{else}}

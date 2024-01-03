@@ -1,0 +1,31 @@
+<form class="{{cssClass}} atd6" autocomplete="off">
+    <section class="top-section">
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item" data-tab="general">{{localize "ATD6.ui.tab.general"}}</a>
+            <a class="item" data-tab="effects">{{localize "ATD6.ui.tab.effects"}}</a>  
+        </nav>
+        <div class="item-name">
+            <table>
+                <tr>
+                    <td>
+                        <img class="item-img" src="{{item.img}}" data-edit="img" title="{{name}}" alt='Imagen del Rasgo'/>
+                    </td>
+                    <td>
+                        <h2><input name="name" type="text" value="{{item.name}}" placeholder='Trait' onClick="this.select();"/></h2>
+                    </td>
+                </tr>
+            </table>   
+        </div>
+    </section>
+    <section class="sheet-body">
+        {{!-- General Tab --}}
+        <div class="tab general" data-group="primary" data-tab="general">
+          {{> "/systems/atd6/templates/items/shield/parts/general.html"}}
+        </div>
+        {{!-- Effects Tab --}}
+        <div class="tab effects" data-group="primary" data-tab="effects">
+          {{> "/systems/atd6/templates/items/shield/parts/effects.html"
+          activeEffects=this.effects}}
+        </div>
+      </section>
+</form>

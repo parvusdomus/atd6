@@ -21,6 +21,7 @@
     width: 150px;
     height: 150px;
     background-color: var(--input-bg-color);
+    border-radius: 16px;
 }
 
 #pause .pause-image {
@@ -348,6 +349,7 @@
 }
 
 .content img {
+    border-radius: 16px;
     width: 40px;
     background-color: var(--input-bg-color);
 }
@@ -389,3 +391,37 @@
 .spelldescription {
     height: 200px;
 }
+
+.active-effects img {
+    border-radius: 16px;
+    width: 40px;
+    height: 40px;
+    background-color: #555353;
+}
+
+.active-effects table{
+    background: none;
+    border: none;
+    padding-top: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.active-effects tr:nth-child(even){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.active-effects tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.active-effects td:nth-child(1){
+    width: 50px;
+}
+
+.active-effects td:nth-child(3){
+    width: 30px;
+    text-align: right;
+}
+

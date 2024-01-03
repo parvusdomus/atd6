@@ -1,0 +1,23 @@
+<div class="active-effects">
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a class="effect-control" data-action="create"><i class="fas fa-plus"></i></a></td>
+        </tr>
+        {{#each this.effects as |effect| }}
+            <tr class="active-effect" data-effect-id="{{effect.id}}">
+                <td>
+                    <img class="token-effect" src="{{effect.icon}}"/> 
+                </td>
+                <td>
+                    <p>{{effect.name}}</p>
+                </td>
+                <td class="actions">
+                    <a class="effect-control" data-action="edit"><i class="fas fa-edit"></i></a>
+                    <a class="effect-control" data-action="delete"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</div>

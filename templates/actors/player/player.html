@@ -7,6 +7,7 @@
           <a class="item" data-tab="traits">{{localize "ATD6.ui.tab.traits"}}</a>
           <a class="item" data-tab="magic">{{localize "ATD6.ui.tab.magic"}}</a>
           <a class="item" data-tab="description">{{localize "ATD6.ui.tab.description"}}</a>    
+          <a class="item" data-tab="effects">{{localize "ATD6.ui.tab.effects"}}</a>
         </nav>
         {{!-- Item Sheet Body --}}
         <section class="sheet-body">
@@ -29,6 +30,10 @@
           {{!-- Notes Tab --}}
           <div class="tab description" data-group="primary" data-tab="description">
             {{> "/systems/atd6/templates/actors/player/parts/description.html"}}
+          </div>
+          {{!-- Effects Tab --}}
+          <div class="tab effects" data-group="primary" data-tab="effects">
+            {{> "/systems/atd6/templates/actors/player/parts/effects.html"}}
           </div>
         </section>
     </section>

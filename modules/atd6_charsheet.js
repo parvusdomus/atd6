@@ -140,6 +140,8 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       actorData.FavouriteScrollSpells = FavouriteScrollSpells;
       actorData.Objects = Objects;
       actorData.isGM = game.user.isGM;
+      let actor=this.actor;
+      actorData.effects = actor.getEmbeddedCollection("ActiveEffect").contents
 
     }
 
@@ -167,6 +169,8 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       html.find('a.item-equip').click(this._onItemEquip.bind(this));
       html.find('a.item-favourite').click(this._onItemFavourite.bind(this));
       html.find('a.item-edit').click(this._onEditClick.bind(this));
+      html.find('a.dice-roll').click(this._onDiceRoll.bind(this));
+      html.find(".effect-control").click(this._onEffectControl.bind(this));
     }
 
     async _onResourceChange(event, data)
@@ -342,6 +346,36 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
         item.update ({'system.favourite': true})
       }
 		  return;
+    }
+
+    async _onDiceRoll (event, data)
+    {
+      event.preventDefault();
+      console.log ("ON DICE ROLL")
+    }
+
+    _onEffectControl(event) {
+      event.preventDefault();
+      const element = event.currentTarget;
+      const dataset = event.currentTarget.dataset;
+      const owner = this.actor;
+      let tr = element.closest("tr");
+      const effect = tr?.dataset?.effectId ? owner.effects.get(tr?.dataset?.effectId) : null;
+      console.log ("EFFECT")
+      console.log (effect)
+      switch (dataset.action) {
+          case "create":
+              return owner.createEmbeddedDocuments("ActiveEffect", [{
+                  label: "New Effect",
+                  icon: "/systems/atd6/style/icons/aura.svg",
+                  origin: owner.uuid,
+                  disabled: false
+              }]);
+          case "edit":
+              return effect.sheet.render(true);
+          case "delete":
+              return effect.delete();
+      }
     }
 
   
