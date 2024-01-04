@@ -11,6 +11,7 @@ export const preloadHandlebarsTemplates = async function () {
       "/systems/atd6/templates/actors/npc/parts/inventory.html",
       "/systems/atd6/templates/actors/npc/parts/magic.html",
       "/systems/atd6/templates/actors/npc/parts/description.html",
+      "/systems/atd6/templates/actors/npc/parts/effects.html",
       "/systems/atd6/templates/items/trait/parts/general.html",
       "/systems/atd6/templates/items/trait/parts/effects.html",
       "/systems/atd6/templates/items/armor/parts/general.html",

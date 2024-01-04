@@ -16,7 +16,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       if (this.actor.type == 'player') {
         this._prepareCharacterItems(data);
         this._prepareValues(data);
-        //this._updateInitiative(data);
+        this._updateInitiative(data);
       }
       return data;
     }
@@ -147,7 +147,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
     }
 
     _prepareValues(sheetData){
-      let totalac=Number(this.actor.system.ac.base)+Number(this.actor.system.ac.bonus)
+      let totalac=Number(this.actor.system.ac.base)+Number(this.actor.system.ac.bonus)+Number(this.actor.system.ac.armor)
       let totalspeed=Number(this.actor.system.speed.base)+Number(this.actor.system.speed.bonus)
       let totalhealth=Number(this.actor.system.resources.health.base)+Number(this.actor.system.resources.health.bonus)
       this.actor.update ({ 'system.ac.total': totalac });
@@ -156,8 +156,10 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
     }
 
     _updateInitiative(sheetData){
-      let initiative=""
-      this.actor.update ({ 'system.initiative': initiative });
+      let nDice=2+Number(this.actor.system.initiative.dicebonus)
+      let nDiff=5+Number(this.actor.system.initiative.difbonus)
+      let initiative=nDice+"d6cs>="+nDiff
+      this.actor.update ({ 'system.initiative.total': initiative });
     }
 
 
@@ -171,6 +173,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       html.find('a.item-favourite').click(this._onItemFavourite.bind(this));
       html.find('a.item-edit').click(this._onEditClick.bind(this));
       html.find('a.dice-roll').click(this._onDiceRoll.bind(this));
+      html.find('a.evade-roll').click(this._onEvadeRoll.bind(this));
       html.find(".effect-control").click(this._onEffectControl.bind(this));
     }
 
@@ -312,25 +315,46 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       event.preventDefault();
 		  const dataset = event.currentTarget.dataset;
 		  const item = this.actor.items.get(dataset.id);
+      let actor = this.actor;
 		  if (item.system.equipped==true){
         item.update ({'system.equipped': false})
+        if (item.type=="armor"){
+          let ac=0
+          actor.update ({'system.ac.armor': ac})
+        }
       }
       else{
         if (item.type=="armor"){
-          for (let i of this.actor.items){
-            if ((i.type=="armor")&&(i.system.equipped==true)){
-              i.update ({'system.equipped': false})
+          if (item.system.armortype=="light" || (item.system.armortype=="heavy" && actor.system.competence.heavyarmor==true)){
+            for (let i of this.actor.items){
+              if ((i.type=="armor")&&(i.system.equipped==true)){
+                i.update ({'system.equipped': false})
+              }
             }
+            item.update ({'system.equipped': true})
+            let ac=item.system.ac
+            actor.update ({'system.ac.armor': ac})
           }
+          else{
+            ui.notifications.warn(game.i18n.localize("ATD6.messages.cantEquipHeavyArmor"));
+          }
+          
         }
         if (item.type=="shield"){
-          for (let i of this.actor.items){
-            if ((i.type=="shield")&&(i.system.equipped==true)){
-              i.update ({'system.equipped': false})
+          if(actor.system.competence.shield==true){
+            for (let i of this.actor.items){
+              if ((i.type=="shield")&&(i.system.equipped==true)){
+                i.update ({'system.equipped': false})
+              }
             }
+            item.update ({'system.equipped': true})
           }
+          else{
+            ui.notifications.warn(game.i18n.localize("ATD6.messages.cantEquipShield"));
+          }
+          
         }
-        item.update ({'system.equipped': true})
+        
       }
 		  return;
     }
@@ -355,7 +379,8 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       html_content+=' name="focus" id="focus"></td>'
       html_content+='<td><label>'+game.i18n.localize("ATD6.dialog.difficulty")+'</label></td><td><select name="difficulty" id="difficulty" data-dtype="Number"><option value=-1>'+game.i18n.localize("ATD6.dialog.easydiff")+'</option><option value=0 selected>'+game.i18n.localize("ATD6.dialog.normaldiff")+'</option><option value=+1>'+game.i18n.localize("ATD6.dialog.difficultdiff")+'</option></select></td>'
       html_content+='</tr></table>'
-
+      let  nDiceBonus=this.actor.system.bonus.regular.dice;
+      let  nDiffBonus=this.actor.system.bonus.regular.difficulty;
       let d = new Dialog({
         title: game.i18n.localize("ATD6.dialog.diceRoll"),
         content: html_content,
@@ -366,7 +391,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           callback: () => {
             let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
-            DiceRoll('desventaja',focus,difficulty)
+            DiceRoll('desventaja',focus,difficulty, nDiceBonus, nDiffBonus)
           }
          },
          normal: {
@@ -375,7 +400,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           callback: () => {
             let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
-            DiceRoll('normal',focus,difficulty)
+            DiceRoll('normal',focus,difficulty, nDiceBonus, nDiffBonus)
           }
          },
          ventaja: {
@@ -384,7 +409,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           callback: () => {
             let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
-            DiceRoll('ventaja',focus,difficulty)
+            DiceRoll('ventaja',focus,difficulty, nDiceBonus, nDiffBonus)
           }
          }
         },
@@ -393,6 +418,20 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
         close: html => console.log("This always is logged no matter which option is chosen")
        });
        d.render(true);
+      return;
+    }
+
+    async _onEvadeRoll(event)
+    {
+      let  nDiceBonus=this.actor.system.bonus.evade.dice;
+      let  nDiffBonus=this.actor.system.bonus.evade.difficulty;
+      let focus=false;
+      let difficulty=0;let actor=this.actor
+      let equippedshield=actor.items.find((k) => k.type === "shield" && k.system.equipped == true);
+      if (equippedshield){
+        nDiceBonus++
+      }
+      DiceRoll('evade',focus,difficulty, nDiceBonus, nDiffBonus)
       return;
     }
 

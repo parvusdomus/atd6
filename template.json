@@ -17,6 +17,7 @@
             },
             "ac": {
                 "base": 3,
+                "armor": 0,
                 "bonus": 0,
                 "total": 0
             },
@@ -32,7 +33,33 @@
                 "rangedheavy": false,
                 "unarmed": false,
                 "improvised": false,
+                "magic": false,
+                "shield": false,
+                "heavyarmor": false,
                 "dominated": ""
+            },
+            "initiative": {
+                "total": "2d6cs>=5",
+                "difbonus": 0,
+                "dicebonus": 0
+            },
+            "bonus": {
+                "regular": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "evade": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "combat": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "damage": {
+                    "each": 0,
+                    "total": 0
+                }
             },
             "gender": "",
             "age": "",
@@ -44,10 +71,6 @@
             "class": "",
             "level": 1,
             "xp": 0,
-            "initiative": "2d6cs>=5",
-            "canusemagic": false,
-            "canuseshield": false,
-            "canuseheavyarmor": false,
             "description": ""
         },
         "NPC": {
@@ -63,10 +86,15 @@
             "threat": "",
             "ac": {
                 "base": 3,
+                "armor": 0,
                 "bonus": 0,
                 "total": 0
             },
-            "initiative": "0.99",
+            "initiative": {
+                "total": "2d6cs>=5",
+                "difbonus": 0,
+                "dicebonus": 0
+            },
             "description": ""
         }
     },
@@ -99,6 +127,7 @@
             "durability": 6,
             "slots": 1,
             "weapontype": "meleelight",
+            "damage": 1,
             "equipped": false,
             "competent": false,
             "mastered": false,
@@ -108,6 +137,7 @@
             "cost": 0,
             "durability": 6,
             "slots": 1,
+            "ac": 1,
             "armortype": "light",
             "equipped": false,
             "competent": false,

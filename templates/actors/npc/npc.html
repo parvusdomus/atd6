@@ -1,160 +1,43 @@
-<form class="{{cssClass}} atd6" autocomplete="off">
+<form class="{{cssClass}}" autocomplete="off">
   <div class="charsheet">
-    <section class="left-section">
-      <div class="char-name"><h2><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></h2></div>
-      <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
-      <h2><label>{{localize "ATD6.resources.effort"}}</label></h2>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 0)}}
-          {{#if (gt actor.system.resources.effort.value 0)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 1)}}
-          {{#if (gt actor.system.resources.effort.value 1)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 2)}}
-          {{#if (gt actor.system.resources.effort.value 2)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 3)}}
-          {{#if (gt actor.system.resources.effort.value 3)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 4)}}
-          {{#if (gt actor.system.resources.effort.value 4)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 5)}}
-          {{#if (gt actor.system.resources.effort.value 5)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 6)}}
-          {{#if (gt actor.system.resources.effort.value 6)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 7)}}
-          {{#if (gt actor.system.resources.effort.value 7)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 8)}}
-          {{#if (gt actor.system.resources.effort.value 8)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 9)}}
-          {{#if (gt actor.system.resources.effort.value 9)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 10)}}
-          {{#if (gt actor.system.resources.effort.value 10)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 11)}}
-          {{#if (gt actor.system.resources.effort.value 11)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 12)}}
-          {{#if (gt actor.system.resources.effort.value 12)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 13)}}
-          {{#if (gt actor.system.resources.effort.value 13)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 14)}}
-          {{#if (gt actor.system.resources.effort.value 14)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 15)}}
-          {{#if (gt actor.system.resources.effort.value 15)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 16)}}
-          {{#if (gt actor.system.resources.effort.value 16)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 17)}}
-          {{#if (gt actor.system.resources.effort.value 17)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 18)}}
-          {{#if (gt actor.system.resources.effort.value 18)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 19)}}
-          {{#if (gt actor.system.resources.effort.value 19)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 20)}}
-          {{#if (gt actor.system.resources.effort.value 20)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 21)}}
-          {{#if (gt actor.system.resources.effort.value 21)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 22)}}
-          {{#if (gt actor.system.resources.effort.value 22)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 23)}}
-          {{#if (gt actor.system.resources.effort.value 23)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 24)}}
-          {{#if (gt actor.system.resources.effort.value 24)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 25)}}
-          {{#if (gt actor.system.resources.effort.value 25)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 26)}}
-          {{#if (gt actor.system.resources.effort.value 26)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 27)}}
-          {{#if (gt actor.system.resources.effort.value 27)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 28)}}
-          {{#if (gt actor.system.resources.effort.value 29)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 30)}}
-          {{#if (gt actor.system.resources.effort.value 30)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 31)}}
-          {{#if (gt actor.system.resources.effort.value 31)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 32)}}
-          {{#if (gt actor.system.resources.effort.value 32)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 33)}}
-          {{#if (gt actor.system.resources.effort.value 33)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 34)}}
-          {{#if (gt actor.system.resources.effort.value 34)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 35)}}
-          {{#if (gt actor.system.resources.effort.value 35)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 36)}}
-          {{#if (gt actor.system.resources.effort.value 36)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-      <ul class="resources">
-        {{#if (gt actor.system.resources.effort.max 37)}}
-          {{#if (gt actor.system.resources.effort.value 37)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 38)}}
-          {{#if (gt actor.system.resources.effort.value 38)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 39)}}
-          {{#if (gt actor.system.resources.effort.value 39)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 40)}}
-          {{#if (gt actor.system.resources.effort.value 40)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 41)}}
-          {{#if (gt actor.system.resources.effort.value 41)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-        {{#if (gt actor.system.resources.effort.max 42)}}
-          {{#if (gt actor.system.resources.effort.value 42)}}<li><a class="effort-change"><img src="systems/atd6/style/icons/heart.svg" title="Left Click: Decrease Current&#013;Right Click: Increase Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{else}}<li><a class="effort-change"><img src="systems/atd6/style/icons/void-heart.svg" title="Left Click: Decrease Current&#013;Right Click: Decrease Current&#013;Shift+Left Click: Decrease Max&#013;Shift+Right Click Increase Max"></a></li>{{/if}}
-        {{/if}}
-      </ul>
-    </section>
-    <section class="right-section">
-      <ul class="npctag">
-        {{#if settings.enableRank}}
-          <li><h1><a class="rank-change"><label>{{actor.system.rank}}</label></a></h1></li>
-        {{/if}}
-        <li><input name="system.traits" type="text" value="{{actor.system.traits}}" placeholder='{{localize "ATD6.ui.tag"}}' data-dtype="String"/></li>
-      </ul>
-      <div>
-        {{editor actor.system.notes target="system.notes" button=true owner=owner editable=true}}
-      </div>
+    <section class="top-section">
+        <nav class="sheet-tabs tabs" data-group="primary">
+          <a class="item" data-tab="general">{{localize "ATD6.ui.tab.general"}}</a>
+          <a class="item" data-tab="inventory">{{localize "ATD6.ui.tab.inventory"}}</a>
+          <a class="item" data-tab="traits">{{localize "ATD6.ui.tab.traits"}}</a>
+          {{#if actor.system.competence.magic}}
+            <a class="item" data-tab="magic">{{localize "ATD6.ui.tab.magic"}}</a>
+          {{/if}}
+          <a class="item" data-tab="description">{{localize "ATD6.ui.tab.description"}}</a>    
+          <a class="item" data-tab="effects">{{localize "ATD6.ui.tab.effects"}}</a>
+        </nav>
+        {{!-- Item Sheet Body --}}
+        <section class="sheet-body">
+          {{!-- General Tab --}}
+          <div class="tab general" data-group="primary" data-tab="general">
+            {{> "/systems/atd6/templates/actors/npc/parts/general.html"}}
+          </div>
+          {{!-- Inventory Tab --}}
+          <div class="tab inventory" data-group="primary" data-tab="inventory">
+            {{> "/systems/atd6/templates/actors/npc/parts/inventory.html"}}
+          </div>
+          {{!-- Traits Tab --}}
+          <div class="tab traits" data-group="primary" data-tab="traits">
+            {{> "/systems/atd6/templates/actors/npc/parts/traits.html"}}
+          </div>
+          {{!-- Magic Tab --}}
+          <div class="tab magic" data-group="primary" data-tab="magic">
+            {{> "/systems/atd6/templates/actors/npc/parts/magic.html"}}
+          </div>
+          {{!-- Notes Tab --}}
+          <div class="tab description" data-group="primary" data-tab="description">
+            {{> "/systems/atd6/templates/actors/npc/parts/description.html"}}
+          </div>
+          {{!-- Effects Tab --}}
+          <div class="tab effects" data-group="primary" data-tab="effects">
+            {{> "/systems/atd6/templates/actors/npc/parts/effects.html"}}
+          </div>
+        </section>
     </section>
   </div>
 </form>

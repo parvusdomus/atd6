@@ -59,6 +59,8 @@
     "ATD6.messages.cantAddMore": "No puedes añadir más de un objeto de ese tipo.",
     "ATD6.messages.deleteTitle": "¿Borrar objeto?.",
     "ATD6.messages.deleteText": "¿Estás seguro de que quieres borrar este objeto?",
+    "ATD6.messages.cantEquipHeavyArmor": "No puedes equipar armaduras pesadas",
+    "ATD6.messages.cantEquipShield": "No puedes equipar escudos",
 
     "ATD6.dialog.focus": "Foco",
     "ATD6.dialog.disadvantage": "Desventaja",

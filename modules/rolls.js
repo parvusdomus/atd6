@@ -1,4 +1,4 @@
-export async function DiceRoll(rollType, focus, difficulty)
+export async function DiceRoll(rollType, focus, difficulty, nDiceBonus, nDiffBonus)
 {
     let tirada= ""
     let testResult=""
@@ -9,7 +9,8 @@ export async function DiceRoll(rollType, focus, difficulty)
     let dados=[];
     let nDice=0;
     let actor_id = ChatMessage.getSpeaker().actor;
-    let nDiff=5+Number(difficulty)
+    let nDiff=5+Number(difficulty)+Number(nDiffBonus);
+
     switch (rollType){
         case 'ventaja':
         {
@@ -26,6 +27,11 @@ export async function DiceRoll(rollType, focus, difficulty)
             nDice=1;
             break;
         }
+        case 'evade':
+        {
+            nDice=1;
+            break;
+        }
 
     }
     if (focus==true){
@@ -33,6 +39,7 @@ export async function DiceRoll(rollType, focus, difficulty)
     }
 
     let actor = game.actors.get(ChatMessage.getSpeaker().actor);
+    nDice+=Number(nDiceBonus);
     tirada=nDice+"d6"
     rollText="<label>"+tirada+" VS "+nDiff+"</label>"
     let d6Roll = await new Roll(String(tirada)).roll({async: false});
