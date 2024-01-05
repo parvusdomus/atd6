@@ -59,8 +59,18 @@
                 "damage": {
                     "each": 0,
                     "total": 0
-                }
+                },
+                "focusroll": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "focusdamage": {
+                    "each": 0,
+                    "total": 0
+                } 
+
             },
+            "focus": false,
             "gender": "",
             "age": "",
             "size": "",
@@ -73,7 +83,7 @@
             "xp": 0,
             "description": ""
         },
-        "NPC": {
+        "npc": {
             "resources":{
                 "health": {
                     "base": 0,
@@ -90,10 +100,40 @@
                 "bonus": 0,
                 "total": 0
             },
+            "speed": {
+                "base": 25,
+                "bonus": 0,
+                "total": 0
+            },
+            "bonus": {
+                "regular": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "evade": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "combat": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "damage": {
+                    "each": 0,
+                    "total": 0
+                },
+                "focusroll": {
+                    "dice": 0,
+                    "difficulty": 0
+                },
+                "focusdamage": {
+                    "each": 0,
+                    "total": 0
+                } 
+            },
+            "focus": false,
             "initiative": {
-                "total": "2d6cs>=5",
-                "difbonus": 0,
-                "dicebonus": 0
+                "total": "0.99"
             },
             "description": ""
         }

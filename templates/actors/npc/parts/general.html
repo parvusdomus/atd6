@@ -4,6 +4,11 @@
             <td style="width: 155px;">
                 <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
                 <h1><a class="dice-roll"><i class="fa-solid fa-dice"></i></a></h1>
+                {{#if actor.system.focus}}
+                    <h1><a class="focus-toggle"><label style="font-family: var(--header-font-name); color: darkred;">{{localize "ATD6.dialog.focus"}}</label></a></h1>
+                {{else}}
+                    <h1><a class="focus-toggle"><label style="font-family: var(--header-font-name);">{{localize "ATD6.dialog.focus"}}</label></a></h1>
+                {{/if}}
             </td>
             <td>
                 <table>
@@ -11,197 +16,55 @@
                         <td>
                             <div class="charinput"><h2><input name="name" type="text" value="{{actor.name}}" placeholder='Nombre' onClick="this.select();"/></h2></div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="generalinfo2">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h3><label>&nbsp;{{localize "ATD6.ui.gender"}}&nbsp;</label> </h3> 
-                                    </td>
-                                    <td>
-                                        <h3><input name="system.gender" type="text" value="{{actor.system.gender}}"/></h3>
-                                    </td>  
-                                    <td>
-                                        <h3><label>&nbsp;{{localize "ATD6.ui.age"}}&nbsp;</label></h3>
-                                    </td>
-                                    <td>
-                                        <h3><input name="system.age" type="text" value="{{actor.system.age}}"/></h3>
-                                    </td>
-                                    <td>
-                                        <h3><label>&nbsp;{{localize "ATD6.ui.size"}}&nbsp;</label></h3>
-                                    </td>
-                                    <td>
-                                        <h3><input name="system.size" type="text" value="{{actor.system.size}}"/></h3>
-                                    </td>   
-                                </tr>
-                            </table>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="generalinfo3">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <h3><label>{{localize "ATD6.ui.trade"}}</label> </h3> 
-                                        </td>
-                                        <td>
-                                            <h3><input name="system.trade" type="text" value="{{actor.system.trade}}"/></h3>
-                                        </td>  
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><label>{{localize "ATD6.ui.belief"}}</label> </h3> 
-                                        </td>
-                                        <td>
-                                            <h3><input name="system.belief" type="text" value="{{actor.system.belief}}"/></h3>
-                                        </td>  
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h3><label>{{localize "ATD6.ui.languages"}}</label> </h3> 
-                                        </td>
-                                        <td>
-                                            <h3><input name="system.languages" type="text" disabled="disabled" value="{{actor.system.languages}}"/></h3>
-                                        </td>  
-                                    </tr>
-                                </table>
-                                </div>
-                        </td>
-                    </tr>
-                    
+                    </tr>                    
                 </table>
+                <div class="resources">
+                    <table>
+                        <tr>
+                            <td style="width: 10px; text-align: right;"><h3><a class="evade-roll"><i class="fa-solid fa-dice"></i></a></h3></td>
+                            <td style="width: 30px;"><h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.ac"}}&nbsp;</label></h3></td>
+                            <td style="width: 30px;"><h3><input style="width:100%;" name="system.ac.base" type="number" maxlength="2" size="2" value="{{actor.system.ac.base}}" data-dtype="Number"/></h3></td>
+                            <td style="width: 30px;"><h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.total"}}:&nbsp;</label></h3></td>
+                            <td style="width: 70px;"><h3><label>{{actor.system.ac.total}}</label></h3></td>
+                            <td style="width: 70px;"><h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.speed"}}&nbsp;</label></h3></td>
+                            <td style="width: 30px;"><h3><input style="width:100%;" name="system.speed.base" type="number" maxlength="2" size="2" value="{{actor.system.speed.base}}" data-dtype="Number"/></h3></td>
+                            <td style="width: 70px;"><h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.total"}}</label></h3></td>
+                            <td style="width: 70px;"><h3><label>{{actor.system.speed.total}}</label></h3></td>
+                        </tr>
+                    </table>
+                    <table style="width: 100px;">
+                        <tr>
+                            <td style="width: 70px;">
+                                <h3><label>{{localize "ATD6.ui.health"}}</label></h3>
+                            </td>
+                            <td style="width: 30px;"><h3><input style="width:100%;" name="system.resources.health.base" type="number" maxlength="2" size="2" value="{{actor.system.resources.health.base}}" data-dtype="Number"/></h3></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>
+                                    {{#times actor.system.resources.health.max}}
+                                        <a class="resource-change" data-resource="health" data-number={{.}}>
+                                            {{#if (gte . ../actor.system.resources.health.value)}}
+                                                <i class="far fa-square"></i>
+                                            {{else}}
+                                                <i class="fas fa-check-square"></i>
+                                            {{/if}}
+                                        </a>
+                                    {{/times}}
+                                </h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </td>
         </tr>
     </table> 
-    <div class="heritage">
-        <table>
-            <tr>
-                <td style="width: 75px;">
-                    <h3><label>{{localize "ATD6.ui.heritage"}}&nbsp;</label></h3>
-                </td>
-                <td style="width: 10px; text-align: right">
-                    {{#each Heritage as |item id|}}
-                        <h3><a class="item-delete" data-id="{{item._id}}"><i class="fas fa-trash">&nbsp;</i></a></h3>
-                    {{/each}}
-                </td>
-                <td>
-                    <h3><input name="system.heritage" type="text" disabled="disabled" value="{{actor.system.heritage}}"/></h3>
-                </td>
-                <td style="width: 75px;">
-                    <h3><label>&nbsp;{{localize "ATD6.ui.class"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    <h3><input name="system.class" type="text" value="{{actor.system.class}}"/></h3>
-                </td>
-            </tr>
-        </table>
-
+    <div class="npchr">
+        <hr/>
     </div>
-    <div class="resources">
-        <table>
-            <tr>
-                <td style="width: 75px;">
-                    <h3><label>{{localize "ATD6.ui.health"}}</label></h3>
-                </td>
-                <td>
-                    <h3>
-                        {{#times actor.system.resources.health.max}}
-                            <a class="resource-change" data-resource="health" data-number={{.}}>
-                                {{#if (gte . ../actor.system.resources.health.value)}}
-                                    <i class="far fa-square"></i>
-                                {{else}}
-                                    <i class="fas fa-check-square"></i>
-                                {{/if}}
-                            </a>
-                        {{/times}}
-                    </h3>
-                </td>
-                <td style="width: 10px; text-align: right;"><h3><a class="evade-roll"><i class="fa-solid fa-dice"></i></a></h3></td>
-                <td style="width: 75px;">
-                    <h3><label>&nbsp;{{localize "ATD6.ui.ac"}}&nbsp;&nbsp;{{actor.system.ac.total}}</label></h3>
-                </td>
-                <td style="width: 75px;">
-                    <h3><label>{{localize "ATD6.ui.speed"}}&nbsp;&nbsp;{{actor.system.speed.total}}</label></h3>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="competences">
-        <table>
-            <tr>
-                <td>
-                    <h3><label>&nbsp;{{localize "ATD6.ui.ml"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    {{#if (eq actor.system.competence.meleelight true)}}
-                        <a class="competence-toggle" data-competence="meleelight"><i class="fas fa-check-square"></i></a>
-                    {{else}}
-                        <a class="competence-toggle" data-competence="meleelight"><i class="far fa-square"></i></a>
-                    {{/if}}
-                </td>
-                <td>
-                    <h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.mh"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    {{#if (eq actor.system.competence.meleeheavy true)}}
-                        <a class="competence-toggle" data-competence="meleeheavy"><i class="fas fa-check-square"></i></a>
-                    {{else}}
-                        <a class="competence-toggle" data-competence="meleeheavy"><i class="far fa-square"></i></a>
-                    {{/if}}
-                </td>
-                <td>
-                    <h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.rl"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    {{#if (eq actor.system.competence.rangedlight true)}}
-                        <a class="competence-toggle" data-competence="rangedlight"><i class="fas fa-check-square"></i></a>
-                    {{else}}
-                        <a class="competence-toggle" data-competence="rangedlight"><i class="far fa-square"></i></a>
-                    {{/if}}
-                </td>
-                <td>
-                    <h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.rh"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    {{#if (eq actor.system.competence.rangedheavy true)}}
-                        <a class="competence-toggle" data-competence="rangedheavy"><i class="fas fa-check-square"></i></a>
-                    {{else}}
-                        <a class="competence-toggle" data-competence="rangedheavy"><i class="far fa-square"></i></a>
-                    {{/if}}
-                </td>
-                <td>
-                    <h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.ua"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    {{#if (eq actor.system.competence.unarmed true)}}
-                        <a class="competence-toggle" data-competence="unarmed"><i class="fas fa-check-square"></i></a>
-                    {{else}}
-                        <a class="competence-toggle" data-competence="unarmed"><i class="far fa-square"></i></a>
-                    {{/if}}
-                </td>
-                <td>
-                    <h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.im"}}&nbsp;</label></h3>
-                </td>
-                <td>
-                    {{#if (eq actor.system.competence.improvised true)}}
-                        <a class="competence-toggle" data-competence="improvised"><i class="fas fa-check-square"></i></a>
-                    {{else}}
-                        <a class="competence-toggle" data-competence="improvised"><i class="far fa-square"></i></a>
-                    {{/if}}
-                </td>
-                <td>
-                    <h3><label>&nbsp;&nbsp;{{localize "ATD6.ui.dom"}}&nbsp;&nbsp;</label></h3>
-                </td>
-                <td>
-                    <h3><input name="system.competence.dominated" type="text" value="{{actor.system.competence.dominated}}"/></h3>
-                </td>
-            </tr>
-        </table>
-    </div>
+    
     <div class="content">
         <table>
             {{#each EquippedWeapons as |item id|}}
@@ -278,7 +141,7 @@
                 </td>
                 <td style="width: 50px; text-align: right;">
                     <a class="item-favourite" data-id="{{item._id}}">
-                        {{#if item.system.equipped}}
+                        {{#if item.system.favourite}}
                             <i class="fa-solid fa-star"></i>
                         {{else}}
                             <i class="fa-regular fa-star"></i>

@@ -1,4 +1,5 @@
 import {DiceRoll} from "./rolls.js";
+import {CombatRoll} from "./rolls.js";
 export default class ATD6_CHAR_SHEET extends ActorSheet{
     static get defaultOptions() {
       return mergeObject(super.defaultOptions, {
@@ -168,12 +169,14 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
 		  super.activateListeners(html);
       html.find('a.resource-change').click(this._onResourceChange.bind(this));
       html.find('a.competence-toggle').click(this._onCompetenceToggle.bind(this));
+      html.find('a.focus-toggle').click(this._onFocusToggle.bind(this));
       html.find('a.item-delete').click(this._onDeleteClick.bind(this));
       html.find('a.item-equip').click(this._onItemEquip.bind(this));
       html.find('a.item-favourite').click(this._onItemFavourite.bind(this));
       html.find('a.item-edit').click(this._onEditClick.bind(this));
       html.find('a.dice-roll').click(this._onDiceRoll.bind(this));
       html.find('a.evade-roll').click(this._onEvadeRoll.bind(this));
+      html.find('a.weapon-roll').click(this._onWeaponRoll.bind(this));
       html.find(".effect-control").click(this._onEffectControl.bind(this));
     }
 
@@ -276,6 +279,18 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       return;
     }
 
+    async _onFocusToggle (event, data){
+      event.preventDefault();
+      const dataset = event.currentTarget.dataset;
+      if (this.actor.system.focus==true){
+        await this.actor.update ({'system.focus': false});
+      }
+      else {
+        await this.actor.update ({'system.focus': true});
+      }
+      return;
+    }
+
     async _onDeleteClick(event, data)
     {
       event.preventDefault();
@@ -352,9 +367,10 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           else{
             ui.notifications.warn(game.i18n.localize("ATD6.messages.cantEquipShield"));
           }
-          
         }
-        
+        if (item.type=="weapon"){
+          item.update ({'system.equipped': true})
+        } 
       }
 		  return;
     }
@@ -375,12 +391,12 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
 
     async _onDiceRoll(event)
     {
-      let html_content='<table style="background: none; border:none; text-align: center;"><tr><td><label>'+game.i18n.localize("ATD6.dialog.focus")+'</label><input type="checkbox"' 
-      html_content+=' name="focus" id="focus"></td>'
+      let html_content='<table style="background: none; border:none; text-align: center;"><tr>'
       html_content+='<td><label>'+game.i18n.localize("ATD6.dialog.difficulty")+'</label></td><td><select name="difficulty" id="difficulty" data-dtype="Number"><option value=-1>'+game.i18n.localize("ATD6.dialog.easydiff")+'</option><option value=0 selected>'+game.i18n.localize("ATD6.dialog.normaldiff")+'</option><option value=+1>'+game.i18n.localize("ATD6.dialog.difficultdiff")+'</option></select></td>'
       html_content+='</tr></table>'
       let  nDiceBonus=this.actor.system.bonus.regular.dice;
       let  nDiffBonus=this.actor.system.bonus.regular.difficulty;
+      let actor_id = this.actor._id;
       let d = new Dialog({
         title: game.i18n.localize("ATD6.dialog.diceRoll"),
         content: html_content,
@@ -391,7 +407,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           callback: () => {
             let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
-            DiceRoll('desventaja',focus,difficulty, nDiceBonus, nDiffBonus)
+            DiceRoll(actor_id,'desventaja',focus,difficulty, nDiceBonus, nDiffBonus)
           }
          },
          normal: {
@@ -400,7 +416,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           callback: () => {
             let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
-            DiceRoll('normal',focus,difficulty, nDiceBonus, nDiffBonus)
+            DiceRoll(actor_id,'normal',focus,difficulty, nDiceBonus, nDiffBonus)
           }
          },
          ventaja: {
@@ -409,7 +425,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           callback: () => {
             let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
-            DiceRoll('ventaja',focus,difficulty, nDiceBonus, nDiffBonus)
+            DiceRoll(actor_id,'ventaja',focus,difficulty, nDiceBonus, nDiffBonus)
           }
          }
         },
@@ -423,6 +439,7 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
 
     async _onEvadeRoll(event)
     {
+      let actor_id = this.actor._id;
       let  nDiceBonus=this.actor.system.bonus.evade.dice;
       let  nDiffBonus=this.actor.system.bonus.evade.difficulty;
       let focus=false;
@@ -431,7 +448,45 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       if (equippedshield){
         nDiceBonus++
       }
-      DiceRoll('evade',focus,difficulty, nDiceBonus, nDiffBonus)
+      DiceRoll(actor_id,'evade',focus,difficulty, nDiceBonus, nDiffBonus)
+      return;
+    }
+
+    async _onWeaponRoll(event)
+    {
+      const dataset = event.currentTarget.dataset;
+      let actor = this.actor
+      let actor_id = this.actor._id
+      let item=this.actor.items.get(dataset.item_id) 
+      let target= Array.from(game.user.targets)[0]?.actor;
+      let rollType = ""
+      if (item.system.competent == true){
+        if (item.system.mastered == true){
+          rollType = 'ventaja'
+        }
+        else {
+          rollType = 'normal'
+        }
+      }
+      else {
+        rollType = 'desventaja'
+      }
+      let difficulty=5
+      
+      if (target){
+        difficulty=target.system.ac.total
+      }
+      let focus=actor.system.focus
+      let weaponDamage = item.system.damage
+      let nDiceBonus = actor.system.bonus.combat.dice
+      let nDiffBonus = actor.system.bonus.combat.difficulty
+      let nDiceFocusBonus = actor.system.bonus.focusroll.dice
+      let nDiffFocusBonus = actor.system.bonus.focusroll.difficulty
+      let nFocusDamageBonus = actor.system.bonus.focusdamage.total
+      let nFocusDamageEachBonus = actor.system.bonus.focusdamage.each
+      let nDamageBonus = actor.system.bonus.damage.total
+      let nDamageEachBonus = actor.system.bonus.damage.each
+      CombatRoll(actor_id,rollType, focus, difficulty, weaponDamage, nDiceBonus, nDiffBonus, nDiceFocusBonus, nDiffFocusBonus, nFocusDamageBonus, nFocusDamageEachBonus, nDamageBonus, nDamageEachBonus)
       return;
     }
 
@@ -442,8 +497,6 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
       const owner = this.actor;
       let tr = element.closest("tr");
       const effect = tr?.dataset?.effectId ? owner.effects.get(tr?.dataset?.effectId) : null;
-      console.log ("EFFECT")
-      console.log (effect)
       switch (dataset.action) {
           case "create":
               return owner.createEmbeddedDocuments("ActiveEffect", [{
@@ -455,7 +508,15 @@ export default class ATD6_CHAR_SHEET extends ActorSheet{
           case "edit":
               return effect.sheet.render(true);
           case "delete":
-              return effect.delete();
+            {
+              console.log (effect);
+                if (effect.name=="Dead")
+                  {
+                    owner.parent.update({overlayEffect:""});
+                  }
+                return effect.delete();
+            }
+              
       }
     }
 

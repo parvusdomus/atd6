@@ -55,7 +55,7 @@ Handlebars.registerHelper("times", function(n, content)
     });
     
 Handlebars.registerHelper("face", diceToFaces);
-//Hooks.on('renderChatLog', (app, html, data) => atd6Chat.chatListeners(html))
+Hooks.on('renderChatLog', (app, html, data) => atd6Chat.chatListeners(html))
 
 //Hooks.on('refreshToken', () => {
 

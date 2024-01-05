@@ -55,12 +55,16 @@
     "ATD6.ui.armors": "Armaduras",
     "ATD6.ui.shields": "Escudos",
     "ATD6.ui.objects": "Objetos",
+    "ATD6.ui.total": "Total",
 
     "ATD6.messages.cantAddMore": "No puedes añadir más de un objeto de ese tipo.",
     "ATD6.messages.deleteTitle": "¿Borrar objeto?.",
     "ATD6.messages.deleteText": "¿Estás seguro de que quieres borrar este objeto?",
     "ATD6.messages.cantEquipHeavyArmor": "No puedes equipar armaduras pesadas",
     "ATD6.messages.cantEquipShield": "No puedes equipar escudos",
+    "ATD6.messages.receivedamage": "recibe daño: ",
+    "ATD6.messages.dies": "muere",
+    "ATD6.messages.notarget": "No hay objetivo marcado",
 
     "ATD6.dialog.focus": "Foco",
     "ATD6.dialog.disadvantage": "Desventaja",
@@ -75,5 +79,6 @@
     "ATD6.chat.regularSuccess": "Éxito Normal",
     "ATD6.chat.criticalSuccess": "Éxito Crítico",
     "ATD6.chat.regularFailure": "Fallo Normal",
-    "ATD6.chat.criticalFailure": "Fallo Crítico"
+    "ATD6.chat.criticalFailure": "Fallo Crítico",
+    "ATD6.chat.evadeRoll": "Tirada de Evasión"
 }

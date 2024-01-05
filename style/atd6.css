@@ -223,6 +223,10 @@
     color: var(--main-font-color);
 }
 
+.resources input{
+    text-align: center;
+}
+
 .competences table{
     background: none;
     background-color: var(--input-bg-color);
@@ -372,6 +376,10 @@
     height: 532px;
 }
 
+.pnjdescription {
+    height: 420px;
+}
+
 .weapondescription {
     height: 200px;
 }
@@ -453,8 +461,15 @@
     border-bottom: none;
 }
 
+.damage-result {
+    background-color:  rgba(128, 0, 0, 0.5);
+    color: white;
+    font-family: var(--font-name);
+    border-bottom: none;
+    text-align: center;
+}
+
 
 .dice-breakdown{
     text-align: center;
 }
-

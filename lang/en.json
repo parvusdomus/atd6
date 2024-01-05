@@ -59,12 +59,16 @@
     "ATD6.ui.innatespells": "Innate Spells",
     "ATD6.ui.scroll": "Scroll",
     "ATD6.ui.scrolls": "Scrolls",
+    "ATD6.ui.total": "Total",
 
     "ATD6.messages.cantAddMore": "Can't add more than one item of thet type.",
     "ATD6.messages.deleteTitle": "Delete item?.",
     "ATD6.messages.deleteText": "Are you sure you want to delete this item?",
     "ATD6.messages.cantEquipHeavyArmor": "You can't equip heavy armors",
     "ATD6.messages.cantEquipShield": "You can't equip shields",
+    "ATD6.messages.receivedamage": "receives damage: ",
+    "ATD6.messages.dies": "dies",
+    "ATD6.messages.notarget": "No target is selected",
 
     "ATD6.dialog.focus": "Focus",
     "ATD6.dialog.disadvantage": "Disadvantage",
@@ -79,5 +83,6 @@
     "ATD6.chat.regularSuccess": "Regular Success",
     "ATD6.chat.criticalSuccess": "Critical Success",
     "ATD6.chat.regularFailure": "Regular Failure",
-    "ATD6.chat.criticalFailure": "Critical Failure"
+    "ATD6.chat.criticalFailure": "Critical Failure",
+    "ATD6.chat.evadeRoll": "Evade Roll"
 }

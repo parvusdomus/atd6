@@ -4,6 +4,11 @@
             <td style="width: 155px;">
                 <div class="char-pic"><img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{name}}" alt='Imagen del Personaje'/></div>
                 <h1><a class="dice-roll"><i class="fa-solid fa-dice"></i></a></h1>
+                {{#if actor.system.focus}}
+                    <h1><a class="focus-toggle"><label style="font-family: var(--header-font-name); color: darkred;">{{localize "ATD6.dialog.focus"}}</label></a></h1>
+                {{else}}
+                    <h1><a class="focus-toggle"><label style="font-family: var(--header-font-name);">{{localize "ATD6.dialog.focus"}}</label></a></h1>
+                {{/if}}
             </td>
             <td>
                 <table>
@@ -278,7 +283,7 @@
                 </td>
                 <td style="width: 50px; text-align: right;">
                     <a class="item-favourite" data-id="{{item._id}}">
-                        {{#if item.system.equipped}}
+                        {{#if item.system.favourite}}
                             <i class="fa-solid fa-star"></i>
                         {{else}}
                             <i class="fa-regular fa-star"></i>

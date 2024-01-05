@@ -8,7 +8,11 @@
         {{#each this.effects as |effect| }}
             <tr class="active-effect" data-effect-id="{{effect.id}}">
                 <td>
-                    <img class="token-effect" src="{{effect.icon}}"/> 
+                    {{#if (eq effect.name "Dead")}}
+                        <img class="token-effect" src="icons/svg/skull.svg"/>
+                    {{else}}
+                        <img class="token-effect" src="{{effect.icon}}"/> 
+                    {{/if}}
                 </td>
                 <td>
                     <p>{{effect.name}}</p>
