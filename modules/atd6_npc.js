@@ -251,6 +251,7 @@ export default class ATD6_NPC_SHEET extends ActorSheet{
       let actor_id = this.actor._id
       let  nDiceBonus=this.actor.system.bonus.regular.dice;
       let  nDiffBonus=this.actor.system.bonus.regular.difficulty;
+      let focus=false;
       let d = new Dialog({
         title: game.i18n.localize("ATD6.dialog.diceRoll"),
         content: html_content,
@@ -259,7 +260,6 @@ export default class ATD6_NPC_SHEET extends ActorSheet{
           icon: '<i class="fa-solid fa-cube"></i>',
           label: game.i18n.localize("ATD6.dialog.disadvantage"),
           callback: () => {
-            let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
             DiceRoll(actor_id,'desventaja',focus,difficulty, nDiceBonus, nDiffBonus)
           }
@@ -268,7 +268,6 @@ export default class ATD6_NPC_SHEET extends ActorSheet{
           icon: '<i class="fa-solid fa-dice"></i>',
           label: game.i18n.localize("ATD6.dialog.normal"),
           callback: () => {
-            let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
             DiceRoll(actor_id,'normal',focus,difficulty, nDiceBonus, nDiffBonus)
           }
@@ -277,7 +276,6 @@ export default class ATD6_NPC_SHEET extends ActorSheet{
           icon: '<i class="fa-solid fa-cubes"></i>',
           label: game.i18n.localize("ATD6.dialog.advantage"),
           callback: () => {
-            let focus=document.getElementById("focus").checked;
             let difficulty=document.getElementById("difficulty").value;
             DiceRoll(actor_id,'ventaja',focus,difficulty, nDiceBonus, nDiffBonus)
           }
