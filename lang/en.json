@@ -84,5 +84,14 @@
     "ATD6.chat.criticalSuccess": "Critical Success",
     "ATD6.chat.regularFailure": "Regular Failure",
     "ATD6.chat.criticalFailure": "Critical Failure",
-    "ATD6.chat.evadeRoll": "Evade Roll"
+    "ATD6.chat.evadeRoll": "Evade Roll",
+
+    "ATD6.config.enableCriticalName": "Enable Criticals",
+    "ATD6.config.enableCriticalHint": "Activate this to enable critical success and failure",
+    "ATD6.config.bgImageName": "Background Image",
+    "ATD6.config.bgImageHint": "Find a file to be used as the charater sheet background image",
+    "ATD6.config.logoImageName": "Logo Image",
+    "ATD6.config.logoImageHint": "Find a file to be used as the logo image (top left corner)",
+    "ATD6.config.titleFontName": "Header Font",
+    "ATD6.config.titleFontHint": "Select a font to be used in headers"
 }

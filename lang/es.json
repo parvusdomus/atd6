@@ -80,5 +80,14 @@
     "ATD6.chat.criticalSuccess": "Éxito Crítico",
     "ATD6.chat.regularFailure": "Fallo Normal",
     "ATD6.chat.criticalFailure": "Fallo Crítico",
-    "ATD6.chat.evadeRoll": "Tirada de Evasión"
+    "ATD6.chat.evadeRoll": "Tirada de Evasión",
+
+    "ATD6.config.enableCriticalName": "Activar Críticos",
+    "ATD6.config.enableCriticalHint": "Activa esta opción para permitir éxitos y fracasos críticos",
+    "ATD6.config.bgImageName": "Imagen de fondo",
+    "ATD6.config.bgImageHint": "Escoge un fichero para usar como imagen de fondo de la ficha de personaje",
+    "ATD6.config.logoImageName": "Imagen del Logo",
+    "ATD6.config.logoImageHint": "Escoge un fichero para usar como el logo (esquina superior izda)",
+    "ATD6.config.titleFontName": "Fuente de Cabeceras",
+    "ATD6.config.titleFontHint": "Elige qué fuente quieres usar en las cabeceras"
 }

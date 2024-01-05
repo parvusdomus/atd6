@@ -46,8 +46,7 @@ export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus
     tirada=nDice+"d6"
     rollText+="<label>"+tirada+" VS "+nDiff+"</label>"
     let d6Roll = await new Roll(String(tirada)).roll({async: false});
-    //let critEnabled = game.settings.get('tinyd6', 'enableCritical');
-    let critEnabled=true;
+    let critEnabled = game.settings.get('atd6', 'enableCritical');
     for (let i = 0; i < nDice; i++) {
         if ((d6Roll.terms[0].results[i].result >= nDiff && d6Roll.terms[0].results[i].result > 1) || d6Roll.terms[0].results[i].result > 6){nExitos++}
         if (d6Roll.terms[0].results[i].result == 1){nUnos++}
@@ -157,8 +156,7 @@ export async function CombatRoll(actor_id, rollType, focus, difficulty, weaponDa
     tirada=nDice+"d6"
     rollText+="<label>"+tirada+" VS "+nDiff+"</label>"
     let d6Roll = await new Roll(String(tirada)).roll({async: false});
-    //let critEnabled = game.settings.get('tinyd6', 'enableCritical');
-    let critEnabled=true;
+    let critEnabled = game.settings.get('atd6', 'enableCritical');
     for (let i = 0; i < nDice; i++) {
         if ((d6Roll.terms[0].results[i].result >= nDiff && d6Roll.terms[0].results[i].result > 1) || d6Roll.terms[0].results[i].result > 6){nExitos++}
         if (d6Roll.terms[0].results[i].result == 1){nUnos++}

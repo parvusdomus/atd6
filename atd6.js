@@ -28,6 +28,74 @@ Hooks.once("init", function(){
   console.log("test | LOADING TEMPLATES...");
   preloadHandlebarsTemplates();
 
+  console.log("test | INITIALIZING TINY SETTINGS...");
+
+
+  game.settings.register("atd6", "enableCritical", {
+    name: game.i18n.localize("ATD6.config.enableCriticalName"),
+    hint: game.i18n.localize("ATD6.config.enableCriticalHint"),
+    scope: "world",
+    type: Boolean,
+    default: true,
+    requiresReload: false,
+    config: true
+  });
+
+  game.settings.register('atd6', 'titleFont', {
+    name: game.i18n.localize("ATD6.config.titleFontName"),
+    hint: game.i18n.localize("ATD6.config.titleFontHint"),
+    config: true,
+    type: String,
+    scope: 'world',
+    choices: {
+      "atd6": "Default Advanced TinyD6 font (Quencrg)",
+      "athelas": "Athelas",
+      "dccash": "DCC Ash",
+      "ghoulish": "Goulish",
+      "helsing": "Helsing",
+      "imfell": "IM Fell",
+      "kirsty": "Kirsty",
+      "locust": "Locust Resistance",
+      "luckiest": "Luckiest Guy",
+      "parentssuck": "Parents Suck",
+      "stencil": "Stencil",
+      "vanhelsing": "Van Helsing"
+    },
+    requiresReload: true,
+    default: 'atd6',
+  });
+
+  game.settings.register('atd6', 'bgImage', {
+    name: game.i18n.localize("ATD6.config.bgImageName"),
+    hint: game.i18n.localize("ATD6.config.bgImageHint"),
+    type: String,
+    default: 'systems/atd6/style/images/white.webp',
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    filePicker: 'image',
+  });
+
+  game.settings.register('atd6', 'logoImage', {
+    name: game.i18n.localize("ATD6.config.logoImageName"),
+    hint: game.i18n.localize("ATD6.config.logoImageHint"),
+    type: String,
+    default: 'systems/atd6/style/images/atd6_Logo.webp',
+    scope: 'world',
+    requiresReload: true,
+    config: true,
+    filePicker: 'image',
+  });
+
+  let logoImagePath="../../../"+game.settings.get ("atd6", "logoImage")
+  document.getElementById("logo").src = logoImagePath;
+
+  const root = document.querySelector(':root');
+  let bgImagePath="url(../../../"+game.settings.get ("atd6", "bgImage")+")"
+  root.style.setProperty('--bg-image',bgImagePath)
+  let titleFont=game.settings.get ("atd6", "titleFont")
+  root.style.setProperty('--header-font-name',titleFont) 
+
   console.log("test | SLOWING DOWN PINGS...");
     // Slowing down pings
     CONFIG.Canvas.pings.styles.pulse.duration = 2000
@@ -56,6 +124,7 @@ Handlebars.registerHelper("times", function(n, content)
     
 Handlebars.registerHelper("face", diceToFaces);
 Hooks.on('renderChatLog', (app, html, data) => atd6Chat.chatListeners(html))
+
 
 //Hooks.on('refreshToken', () => {
 

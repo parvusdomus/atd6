@@ -8,6 +8,61 @@
     src: url("../../../systems/atd6/style/fonts/QUENCRG_.TTF");
 }
 
+@font-face {
+    font-family: "athelas";
+    src: url("../../../systems/atd6/style/fonts/Athelas.ttf");
+}
+
+@font-face {
+    font-family: "dccash";
+    src: url("../../../systems/atd6/style/fonts/DccAsh.otf");
+}
+
+@font-face {
+    font-family: "ghoulish";
+    src: url("../../../systems/atd6/style/fonts/Ghoulish.ttf");
+}
+
+@font-face {
+    font-family: "helsing";
+    src: url("../../../systems/atd6/style/fonts/Helsing.otf");
+}
+
+@font-face {
+    font-family: "imfell";
+    src: url("../../../systems/atd6/style/fonts/IMFell.ttf");
+}
+
+@font-face {
+    font-family: "kirsty";
+    src: url("../../../systems/atd6/style/fonts/kirsty.ttf");
+}
+
+@font-face {
+    font-family: "locust";
+    src: url("../../../systems/atd6/style/fonts/LocustResistance.ttf");
+}
+
+@font-face {
+    font-family: "luckiest";
+    src: url("../../../systems/atd6/style/fonts/LuckiestGuy.ttf");
+}
+
+@font-face {
+    font-family: "parentssuck";
+    src: url("../../../systems/atd6/style/fonts/parentssuck.ttf");
+}
+
+@font-face {
+    font-family: "stencil";
+    src: url("../../../systems/atd6/style/fonts/stencilstd.otf");
+}
+
+@font-face {
+    font-family: "vanhelsing";
+    src: url("../../../systems/atd6/style/fonts/VanHelsing.ttf");
+}
+
 .charsheet {
     display: flex;
     width: 100%;
