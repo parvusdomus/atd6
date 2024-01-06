@@ -85,6 +85,9 @@
     "ATD6.chat.regularFailure": "Regular Failure",
     "ATD6.chat.criticalFailure": "Critical Failure",
     "ATD6.chat.evadeRoll": "Evade Roll",
+    "ATD6.chat.durabilityRoll": "Durability Roll",
+    "ATD6.chat.durabilityLoss": "Loses Durability",
+    "ATD6.chat.itemBreaks": "Item Breaks",
 
     "ATD6.config.enableCriticalName": "Enable Criticals",
     "ATD6.config.enableCriticalHint": "Activate this to enable critical success and failure",

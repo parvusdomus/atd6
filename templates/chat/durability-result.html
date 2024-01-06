@@ -1,0 +1,16 @@
+<div class="test-result">
+    {{{testResult}}}
+    {{{rollText}}}
+    
+</div>
+<div class="dice-breakdown">
+    {{#each dados as |die|}}
+        <span>    
+            {{#if (eq die 1)}}
+                <span style="color:red" class="fas fa-2x {{face die }}"></span>
+            {{else}}
+                <span style="color:green" class="fas fa-2x {{face die }}"></span>
+            {{/if}}  
+        </span> 
+    {{/each}}
+</div>

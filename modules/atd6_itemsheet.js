@@ -1,3 +1,4 @@
+import {DurabilityRoll} from "./rolls.js";
 export default class ATD6_ITEM_SHEET extends ItemSheet{
     static get defaultOptions() {
       return mergeObject(super.defaultOptions, {
@@ -30,6 +31,7 @@ export default class ATD6_ITEM_SHEET extends ItemSheet{
       super.activateListeners(html);
       if (this.isEditable) {
           html.find(".effect-control").click(this._onEffectControl.bind(this));
+          html.find(".durability-roll").click(this._onDurabilityRoll.bind(this));
       }
     }
 
@@ -57,6 +59,15 @@ export default class ATD6_ITEM_SHEET extends ItemSheet{
       }
     }
 
-
+    async _onDurabilityRoll(event, data)
+	  {
+      event.preventDefault();
+		  const dataset = event.currentTarget.dataset;
+		  const item = this.actor.items.get(dataset.item_id);
+		  if (item.system.durability > 0){
+        DurabilityRoll (this.actor._id,dataset.item_id)
+      }
+		  return;
+    }
   
   }

@@ -1,4 +1,4 @@
-export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus, nDiffBonus, combat, marksman)
+export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus, nDiffBonus)
 {
     let tirada= ""
     let testResult=""
@@ -8,21 +8,26 @@ export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus
     let rollText=""
     let dados=[];
     let nDice=0;
-    let nDiff=5+Number(difficulty)+Number(nDiffBonus);
+    let nDiff=5+Number(difficulty)
 
     switch (rollType){
         case 'ventaja':
         {
           nDice=3;
+          nDice+=Number(nDiceBonus);
+          nDiff+=Number(nDiffBonus);
           break;
         }
         case 'normal':
         {
             nDice=2;
+            nDice+=Number(nDiceBonus);
+            nDiff+=Number(nDiffBonus);
             break;
         }
         case 'desventaja':
         {
+            nDiff+=Number(nDiffBonus);
             nDice=1;
             break;
         }
@@ -34,15 +39,8 @@ export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus
         }
 
     }
-    if (focus==true && combat==true){
-        nDiff--;
-        if (marksman==true){
-            nDiff--;
-        }
-    }
 
     let actor = game.actors.get(actor_id)
-    nDice+=Number(nDiceBonus);
     tirada=nDice+"d6"
     rollText+="<label>"+tirada+" VS "+nDiff+"</label>"
     let d6Roll = await new Roll(String(tirada)).roll({async: false});
@@ -86,6 +84,52 @@ export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus
     return;
 }
 
+export async function DurabilityRoll(actor_id, item_id)
+{
+ 
+    let testResult=""
+    let rollText=""
+    let dados=[];
+    let actor = game.actors.get(actor_id)
+    let item = actor.items.get(item_id);
+    let currentdurability = item.system.durability
+    let tirada = "1d6"
+    rollText+="<label>"+item.name+": "+game.i18n.localize("ATD6.chat.durabilityRoll")+"</label>"
+    let d6Roll = await new Roll(String(tirada)).roll({async: false});
+    dados.push(d6Roll.terms[0].results[0].result);
+    if (d6Roll.terms[0].results[0].result <= 1){
+        testResult="<h3 class=\"regular-failure\">"+game.i18n.localize("ATD6.chat.durabilityLoss")+"</h3>"
+        currentdurability--
+        item.update ({'system.durability': currentdurability})
+        console.log ("CURRENT DURABILITY")
+        console.log (currentdurability)
+        if (currentdurability <= 0){
+            testResult="<h3 class=\"critical-failure\">"+game.i18n.localize("ATD6.chat.itemBreaks")+"</h3>"
+        }
+    }
+    else{
+        testResult="<h3 class=\"regular-success\">"+game.i18n.localize("ATD6.chat.regularSuccess")+"</h3>"
+    }
+
+    let renderedRoll = await renderTemplate("systems/atd6/templates/chat/durability-result.html", { 
+        rollResult: d6Roll, 
+        actor_id: actor_id,
+        dados: dados,
+        nDice: 1,
+        rollText: rollText,
+        testResult: testResult
+    });
+
+    const chatData = {
+        speaker: actor_id,
+        content: renderedRoll
+    };
+
+    d6Roll.toMessage(chatData);
+    return;
+
+}
+
 export function diceToFaces(value, content)
 {
     switch (Number(value))
@@ -127,11 +171,13 @@ export async function CombatRoll(actor_id, rollType, focus, difficulty, weaponDa
         case 'ventaja':
         {
           nDice=3;
+          nDice+=Number(nDiceBonus);
           break;
         }
         case 'normal':
         {
             nDice=2;
+            nDice+=Number(nDiceBonus);
             break;
         }
         case 'desventaja':
@@ -152,7 +198,7 @@ export async function CombatRoll(actor_id, rollType, focus, difficulty, weaponDa
         console.log ("CON FOCO")
         console.log (actor.system.focus)
     }
-    nDice+=Number(nDiceBonus);
+    
     tirada=nDice+"d6"
     rollText+="<label>"+tirada+" VS "+nDiff+"</label>"
     let d6Roll = await new Roll(String(tirada)).roll({async: false});

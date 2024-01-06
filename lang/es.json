@@ -81,6 +81,9 @@
     "ATD6.chat.regularFailure": "Fallo Normal",
     "ATD6.chat.criticalFailure": "Fallo Crítico",
     "ATD6.chat.evadeRoll": "Tirada de Evasión",
+    "ATD6.chat.durabilityRoll": "Tirada de Durabilidad",
+    "ATD6.chat.durabilityLoss": "El objeto se desgasta",
+    "ATD6.chat.itemBreaks": "El objeto se rompe",
 
     "ATD6.config.enableCriticalName": "Activar Críticos",
     "ATD6.config.enableCriticalHint": "Activa esta opción para permitir éxitos y fracasos críticos",
