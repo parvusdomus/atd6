@@ -2,7 +2,7 @@ import {DiceRoll} from "./rolls.js";
 import {CombatRoll} from "./rolls.js";
 export default class ATD6_NPC_SHEET extends ActorSheet{
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["atd6", "sheet", "actor"],
           template: "systems/atd6/templates/actors/npc/npc.html",
           width: 600,

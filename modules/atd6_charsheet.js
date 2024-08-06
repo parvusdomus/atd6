@@ -2,7 +2,7 @@ import {DiceRoll} from "./rolls.js";
 import {CombatRoll} from "./rolls.js";
 export default class ATD6_CHAR_SHEET extends ActorSheet{
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["atd6", "sheet", "actor"],
           template: "systems/atd6/templates/actors/player/player.html",
           width: 600,
