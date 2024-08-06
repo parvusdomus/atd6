@@ -110,7 +110,7 @@
     --input-bg-color: #555353;
     --input-bg-color2: #ffffff;
     --list-text-color: #000000;
-    --input-text-color: #ffffff;
+    --input-text-color-atd6: #ffffff;
     --window-header-bg-color: #000000;
     --window-header-font-color: #ffffff;
     --tab-bg-color-active: #000000;
@@ -181,7 +181,7 @@
 
 .generalinfo input{
     background-color: var(--input-bg-color);
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
     border: none;
 }
 
@@ -308,11 +308,11 @@
 }
 
 .competences label{
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .competences a{
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .competences input{
@@ -324,7 +324,7 @@
 .item-name input{
     text-align: center;
     background-color: var(--input-bg-color);
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .item-name h2{
@@ -373,13 +373,13 @@
 .item-stats input{
     text-align: center;
     background-color: var(--input-bg-color);
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .item-stats select{
     text-align: center;
     background-color: var(--input-bg-color);
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .equipment-title table{
@@ -387,7 +387,7 @@
     text-align: center;
     border: none;
     width: 100%;
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .equipment-title td{
@@ -424,7 +424,7 @@
     text-align: left;
     padding: 5px;
 	background-color: var(--input-bg-color);
-    color: var(--input-text-color);
+    color: var(--input-text-color-atd6);
 }
 
 .pjdescription {
