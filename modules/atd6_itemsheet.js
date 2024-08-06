@@ -1,7 +1,7 @@
 import {DurabilityRoll} from "./rolls.js";
 export default class ATD6_ITEM_SHEET extends ItemSheet{
     static get defaultOptions() {
-      return mergeObject(super.defaultOptions, {
+      return foundry.utils.mergeObject(super.defaultOptions, {
           classes: ["atd6", "sheet", "item"],
           template: "systems/atd6/templates/actors/character.html",
           width: 400,
@@ -14,18 +14,34 @@ export default class ATD6_ITEM_SHEET extends ItemSheet{
         return `systems/atd6/templates/items/${this.item.type}/${this.item.type}.html`;
     }
 
-    async getData() {
-      const baseData = super.getData();
-      let item = baseData.item;
-
-      return {
-          owner: this.item.isOwner,
-          editable: this.isEditable,
-          item: item,
-          system: item.system,
-          effects: item.getEmbeddedCollection("ActiveEffect").contents
-      };
+    getData() {
+      const data = super.getData();
+      let item = data.item;
+      data.owner= this.item.isOwner
+      data.editable=this.isEditable
+      data.item=item
+      data.system=item.system
+      data.effects=item.getEmbeddedCollection("ActiveEffect").contents
+      data.tipoArmadura = {
+        light: game.i18n.localize("ATD6.ui.light"),
+        heavy: game.i18n.localize("ATD6.ui.heavy"),
+      }
+      data.tipoRasgo = {
+        open: game.i18n.localize("ATD6.ui.open"),
+        heritage: game.i18n.localize("ATD6.ui.heritage"),
+        class: game.i18n.localize("ATD6.ui.class")
+      }
+      data.tipoArma = {
+        meleelight: game.i18n.localize("ATD6.ui.meleelight"),
+        meleeheavy: game.i18n.localize("ATD6.ui.meleeheavy"),
+        rangedlight: game.i18n.localize("ATD6.ui.rangedlight"),
+        rangedheavy: game.i18n.localize("ATD6.ui.rangedheavy"),
+        unarmed: game.i18n.localize("ATD6.ui.unarmed"),
+        improvised: game.i18n.localize("ATD6.ui.improvised")
+      }
+      return data;
     }
+
 
     activateListeners(html) {
       super.activateListeners(html);

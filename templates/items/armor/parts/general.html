@@ -13,12 +13,9 @@
     <table>
         <tr>
             <td><h3><label>&nbsp;{{localize "ATD6.ui.weapontype"}}&nbsp;</label></h3></td>
-            <td>
+            <td>   
                 <h3><select name="system.armortype" data-dtype="String">
-                    {{#select item.system.armortype}}
-                      <option value="light">{{localize "ATD6.ui.light"}}</option>
-                      <option value="heavy">{{localize "ATD6.ui.heavy"}}</option>
-                    {{/select}}
+                    {{selectOptions tipoArmadura selected=item.system.armortype}}
                 </select></h3>
             </td>
             <td><h3><label>&nbsp;{{localize "ATD6.ui.ac"}}&nbsp;</label></h3></td>
