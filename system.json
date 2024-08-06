@@ -2,7 +2,7 @@
     "id": "atd6",
     "title": "Advanced Tiny Dungeon",
     "description": "Game System for Advanced Tiny Dungeon (TinyD6)",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "authors": [
       {
         "name": "ParvusDomus",
@@ -10,8 +10,8 @@
       }
     ],
     "compatibility": {
-      "minimum": "11",
-      "verified": "11"
+      "minimum": "12",
+      "verified": "12"
     },
     "esmodules": [
       "atd6.js"
