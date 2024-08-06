@@ -43,7 +43,7 @@ export async function DiceRoll(actor_id, rollType, focus, difficulty, nDiceBonus
     let actor = game.actors.get(actor_id)
     tirada=nDice+"d6"
     rollText+="<label>"+tirada+" VS "+nDiff+"</label>"
-    let d6Roll = await new Roll(String(tirada)).roll({async: false});
+    let d6Roll = await new Roll(String(tirada)).roll();
     let critEnabled = game.settings.get('atd6', 'enableCritical');
     for (let i = 0; i < nDice; i++) {
         if ((d6Roll.terms[0].results[i].result >= nDiff && d6Roll.terms[0].results[i].result > 1) || d6Roll.terms[0].results[i].result > 6){nExitos++}
@@ -95,7 +95,7 @@ export async function DurabilityRoll(actor_id, item_id)
     let currentdurability = item.system.durability
     let tirada = "1d6"
     rollText+="<label>"+item.name+": "+game.i18n.localize("ATD6.chat.durabilityRoll")+"</label>"
-    let d6Roll = await new Roll(String(tirada)).roll({async: false});
+    let d6Roll = await new Roll(String(tirada)).roll();
     dados.push(d6Roll.terms[0].results[0].result);
     if (d6Roll.terms[0].results[0].result <= 1){
         testResult="<h3 class=\"regular-failure\">"+game.i18n.localize("ATD6.chat.durabilityLoss")+"</h3>"
